@@ -22,8 +22,8 @@ class TestTest {
 
     @Test
     fun getAllGradesTest() {
-        app.start(arrayOf("80", "127.0.0.1"))
-        val response: HttpResponse<String> = Unirest.get("http://localhost/grades").asString()
+        app.start(arrayOf("8080", "127.0.0.1"))
+        val response: HttpResponse<String> = Unirest.get("http://localhost:8080/grades").asString()
         assertThat(response.status).isEqualTo(200)
         assertThat(gson.fromJson(response.body, Array<JSONGrade>::class.java)).isEqualTo(gson.fromJson(EXPECTED_ALL_GRADES, Array<JSONGrade>::class.java))
         app.stop()
