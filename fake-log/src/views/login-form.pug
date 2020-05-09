@@ -1,0 +1,31 @@
+extends layout
+
+block extraHeader
+    link(rel='stylesheet' href='/stylesheets/login.css')
+
+block content
+    div#MainDiv
+        form(method="post")
+
+            div.LogOnBoard
+
+                h1#h1Default Logowanie
+                h2 Proszę podać e-mail i hasło:
+                h2 email: <b>jan@fakelog.cf</b> hasło: <b>jan123</b>
+                div
+                    label(for="LoginName") E-mail:
+                    input(name="LoginName" id="LoginName" type="text" autofocus="autofocus")
+
+                div
+                    label(for="Password") Hasło:
+                    input(name="Password" id="Password" type="password")
+
+                div(id="UnlockRequestSection")
+                    a.Account(href="/powiatwulkanowy/AccountManage/CreateAccount") Załóż konto
+                    a.Account(href="/powiatwulkanowy/AccountManage/UnlockAccount") Przywróć dostęp
+                    a.Account(href="/powiatwulkanowy/AccountManage/SetNewPassword") Zmień hasło
+
+                div
+                    input(type="submit" value="Zaloguj się >")
+
+                div.ErrorMessage= message

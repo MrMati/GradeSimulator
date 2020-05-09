@@ -1,0 +1,22 @@
+extends layout
+
+block extraHeader
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+
+block content
+    div.container
+        h1= title
+        p Welcome to #{title}!
+        ul
+            li
+                a(href=proto + "://api." + host) api
+            li
+                a(href=proto + "://cufs." + host) cufs
+            li
+                a(href=proto + "://uonetplus." + host + "/powiatwulkanowy/Start.mvc/Index") uonetplus
+            li
+                a(href=proto + "://uonetplus-uczen." + host) uonetplus-uczen
+            li
+                a(href=proto + "://uonetplus-opiekun." + host + "/powiatwulkanowy/123456") uonetplus-opiekun
+            li
+                a(href=proto + "://uonetplus-uzytkownik." + host) uonetplus-uzytkownik

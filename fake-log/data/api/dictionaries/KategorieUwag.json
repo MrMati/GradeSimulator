@@ -1,0 +1,237 @@
+[
+  {
+    "Id": 46,
+    "Nazwa": "Wypełnianie obowiązków ucznia",
+    "Aktywny": false
+  },
+  {
+    "Id": 47,
+    "Nazwa": "Zaangażowanie społeczne",
+    "Aktywny": false
+  },
+  {
+    "Id": 48,
+    "Nazwa": "Kultura języka",
+    "Aktywny": false
+  },
+  {
+    "Id": 49,
+    "Nazwa": "Kultura osobista",
+    "Aktywny": false
+  },
+  {
+    "Id": 50,
+    "Nazwa": "Dbałość o bezpieczeństwo i zdrowie",
+    "Aktywny": false
+  },
+  {
+    "Id": 51,
+    "Nazwa": "Szacunek dla innych osób",
+    "Aktywny": false
+  },
+  {
+    "Id": 52,
+    "Nazwa": "Zachowanie norm etycznych",
+    "Aktywny": false
+  },
+  {
+    "Id": 53,
+    "Nazwa": "Reprezentowanie szkoły",
+    "Aktywny": false
+  },
+  {
+    "Id": 54,
+    "Nazwa": "Zachowanie na lekcji",
+    "Aktywny": false
+  },
+  {
+    "Id": 58,
+    "Nazwa": "Inne (informacja bez punktów)",
+    "Aktywny": true
+  },
+  {
+    "Id": 59,
+    "Nazwa": "Udział w konkursie szkolnym",
+    "Aktywny": false
+  },
+  {
+    "Id": 61,
+    "Nazwa": "Przeszkadzanie na lekcjach",
+    "Aktywny": false
+  },
+  {
+    "Id": 66,
+    "Nazwa": "+ Udział w olimpiadzie przedmiotowej i konkursach pozaszk. (rza w sem. 20-30-50)",
+    "Aktywny": true
+  },
+  {
+    "Id": 67,
+    "Nazwa": "+ Udział w konkursie szkolnym (0-20)",
+    "Aktywny": true
+  },
+  {
+    "Id": 68,
+    "Nazwa": "+ Funkcja w szkole (0-20)",
+    "Aktywny": true
+  },
+  {
+    "Id": 69,
+    "Nazwa": "+ Funkcja w klasie (0-30)",
+    "Aktywny": true
+  },
+  {
+    "Id": 70,
+    "Nazwa": "+ Reprezentowanie szkoły w rozgrywkach sport.( raz w sem. 0-100)",
+    "Aktywny": true
+  },
+  {
+    "Id": 71,
+    "Nazwa": "+ Pomoc podczas imprezy szkolnej (0-10)",
+    "Aktywny": false
+  },
+  {
+    "Id": 72,
+    "Nazwa": "+ Praca na rzecz klasy (0-20)",
+    "Aktywny": true
+  },
+  {
+    "Id": 73,
+    "Nazwa": "+ Praca na rzecz szkoły (0-20)",
+    "Aktywny": true
+  },
+  {
+    "Id": 74,
+    "Nazwa": "+ Punktualność (0-20)",
+    "Aktywny": true
+  },
+  {
+    "Id": 75,
+    "Nazwa": "+ Pomoc kolegom (0-10)",
+    "Aktywny": true
+  },
+  {
+    "Id": 76,
+    "Nazwa": "+ Kulturalne zachowanie się w szkole i poza nią (0-50)",
+    "Aktywny": false
+  },
+  {
+    "Id": 77,
+    "Nazwa": "+ Przeciwstawianie się przejawom agresji i wulgarności (0-20)",
+    "Aktywny": false
+  },
+  {
+    "Id": 79,
+    "Nazwa": "+ Do dyspozycji wychowawcy (0-50)",
+    "Aktywny": true
+  },
+  {
+    "Id": 80,
+    "Nazwa": "+ Realizacja projektu edukacyjnego (0-50)",
+    "Aktywny": true
+  },
+  {
+    "Id": 81,
+    "Nazwa": "- Przeszkadzanie na lekcjach -5p.",
+    "Aktywny": true
+  },
+  {
+    "Id": 82,
+    "Nazwa": "- Okłamywanie i oszukiwanie nauczyciela 20p.",
+    "Aktywny": true
+  },
+  {
+    "Id": 83,
+    "Nazwa": "- Niewykonywanie poleceń nauczyciela (10-20)",
+    "Aktywny": true
+  },
+  {
+    "Id": 84,
+    "Nazwa": "- Aroganckie zachowanie wobec nauczyciela lub pracownika szkoły -50p.",
+    "Aktywny": true
+  },
+  {
+    "Id": 85,
+    "Nazwa": "- Ubliżanie kolegom/koleżankom (10-30)",
+    "Aktywny": true
+  },
+  {
+    "Id": 86,
+    "Nazwa": "- Przemoc fizyczna (10-30)",
+    "Aktywny": true
+  },
+  {
+    "Id": 87,
+    "Nazwa": "- Wulgarne słownictwo (10-30)",
+    "Aktywny": true
+  },
+  {
+    "Id": 88,
+    "Nazwa": "- Opuszczanie terenu szkoły w czasie zajęć -10p.",
+    "Aktywny": true
+  },
+  {
+    "Id": 89,
+    "Nazwa": "- Niszczenie mienia (10-30)",
+    "Aktywny": true
+  },
+  {
+    "Id": 90,
+    "Nazwa": "- Zaśmiecanie otoczenia (5-10)",
+    "Aktywny": true
+  },
+  {
+    "Id": 91,
+    "Nazwa": "- Strój i wygląd niezgodny z regulaminem ucznia (2-20)",
+    "Aktywny": true
+  },
+  {
+    "Id": 92,
+    "Nazwa": "- Spóźnienia się na lekcję do 10 min. (3p.)",
+    "Aktywny": true
+  },
+  {
+    "Id": 93,
+    "Nazwa": "- Niewykonywanie zobowiązania (10-20)",
+    "Aktywny": true
+  },
+  {
+    "Id": 94,
+    "Nazwa": "- Nieusprawiedliwiona nieobecność (5p.)",
+    "Aktywny": true
+  },
+  {
+    "Id": 95,
+    "Nazwa": "- Wyłudzanie pieniędzy (50p.)",
+    "Aktywny": true
+  },
+  {
+    "Id": 96,
+    "Nazwa": "- Kradzież (50p.)",
+    "Aktywny": true
+  },
+  {
+    "Id": 97,
+    "Nazwa": "- Palenie papierosów (50p.)",
+    "Aktywny": true
+  },
+  {
+    "Id": 98,
+    "Nazwa": "- Picie alkoholu (50p.)",
+    "Aktywny": true
+  },
+  {
+    "Id": 99,
+    "Nazwa": "- Stosowanie środków odurzających (50p.)",
+    "Aktywny": true
+  },
+  {
+    "Id": 100,
+    "Nazwa": "- Korzystanie z tel. kom. i urz. elek. niezgodnie z regulaminem (5-20)",
+    "Aktywny": true
+  },
+  {
+    "Id": 101,
+    "Nazwa": "- Drastyczne naruszenie ogólnie przyjętych norm społ. (100-250)",
+    "Aktywny": true
+  }
+]

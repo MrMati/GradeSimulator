@@ -1,0 +1,39 @@
+.presentData {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+
+  thead th {
+    background: #d32f2f;
+    color: #fff;
+    font-weight: normal;
+  }
+
+  th, td {
+    padding: 1rem;
+    border: 1px solid #444444;
+    width: 20%;
+
+    span {
+      font-size: smaller;
+      display: block;
+    }
+  }
+}
+
+.x-treelabel-ppl {
+  font-style: italic;
+}
+
+.x-treelabel-rlz {
+  font-weight: normal;
+}
+
+.x-treelabel-inv {
+  font-style: italic;
+  text-decoration: line-through;
+}
+
+.x-treelabel-zas {
+  font-weight: bold;
+}

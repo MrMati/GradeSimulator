@@ -1,0 +1,14 @@
+extends layout
+
+block extraHeader
+    link(rel='stylesheet' href='/stylesheets/login.css')
+    
+block content
+    div#MainDiv
+        div.UnlockAccountSummary
+            h1 Podsumowanie operacji
+            p
+                | Wysłano wiadomość na zapisany w systemie adres e-mail. Wiadomość zawiera dalsze instrukcje uzyskania dostępu do systemu. Proszę sprawdzić skrzynkę poczty elektronicznej i postępować zgodnie ze wskazówkami zapisanymi w wiadomości.
+                br
+                br
+                | W szczególnych przypadkach konfiguracji usługi poczty elektronicznej wiadomość może zostać potraktowana jako niechciana lub zostać zablokowana przez jakiś inny mechanizm filtrowania treści. W takim przypadku należy sprawdzić wszystkie możliwe foldery poczty przychodzącej, począwszy od skrzynki odbiorczej a skończywszy na folderach z wiadomościami odfiltrowanymi.

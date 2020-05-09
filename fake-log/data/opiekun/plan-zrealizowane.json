@@ -1,0 +1,38 @@
+[
+  {
+    "date": "2018-09-17",
+    "number": 1,
+    "subject": "Historia i społeczeństwo",
+    "topic": "Powstanie listopadowe",
+    "teacher": "Histeryczna Jadwiga",
+    "teacherSymbol": "Hi",
+    "absence": "Nieobecność nieusprawiedliwiona"
+  },
+  {
+    "date": "2018-09-17",
+    "number": 4,
+    "subject": "Język polski",
+    "topic": "Inspiracje krajobrazem gór w poezji",
+    "teacher": "Polonistka Joanna",
+    "teacherSymbol": "Po",
+    "absence": "Nieobecność nieusprawiedliwiona"
+  },
+  {
+    "date": "2018-09-17",
+    "number": 7,
+    "subject": "Matematyka",
+    "topic": "Pojęcie funkcji. Funkcja liczbowa. Dziedzina i zbiór wartości funkcji.",
+    "teacher": "Rachunek Beata",
+    "teacherSymbol": "Ra",
+    "absence": "Nieobecność nieusprawiedliwiona"
+  },
+  {
+    "date": "2018-09-18",
+    "number": 1,
+    "subject": "Język angielski",
+    "topic": "Human - vocabulary practice",
+    "teacher": "Angielska Amerykanka",
+    "teacherSymbol": "An",
+    "absence": null
+  }
+]

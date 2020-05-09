@@ -1,0 +1,98 @@
+header[data-organization-name] {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: #444444;
+  height: 10rem;
+  color: #fff;
+
+  &::before,
+  &::after {
+    position: absolute;
+    width: 100rem;
+    min-width: 100rem;
+    margin: 0 auto;
+    right: 0;
+    left: 18rem;
+  }
+
+  &::before {
+    top: 1.5rem;
+    text-transform: uppercase;
+    content: attr(data-organization-name);
+  }
+
+  &::after {
+    content: attr(data-application-name);
+    top: 3.1rem;
+    color: #aaa;
+    font-size: 1.3rem;
+  }
+
+  & > a {
+    width: 100rem;
+    min-width: 100rem;
+    display: block;
+    margin: 0 auto;
+
+    &::before {
+      position: absolute;
+      display: block;
+      content: "";
+      width: 40px;
+      height: 40px;
+      top: 10px;
+      margin-left: 30px;
+      background: url(https://avatars3.githubusercontent.com/u/27146352?s=40)
+    }
+
+    h1 {
+      background: #d32f2f;
+      position: absolute;
+      bottom: 0;
+      margin: 0;
+      font-size: 2.5rem;
+      padding: 0.5rem 1rem;
+      color: #ffffff;
+      font-weight: normal;
+      float: left;
+    }
+  }
+
+  nav {
+    width: 100rem;
+    margin: 0 auto;
+    position: relative;
+
+    ul {
+      margin: 0;
+    }
+
+    ul:last-child {
+      list-style: none;
+      padding: 0;
+      float: right;
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      li {
+        display: inline-block;
+        color: #ffffff;
+      }
+
+      a {
+        display: block;
+        background: #8B0000;
+        text-decoration: none;
+        padding: 1rem;
+        margin: 0 3px;
+        color: #ffffff;
+
+        &:hover {
+          background: #d32f2f;
+        }
+      }
+    }
+  }
+}

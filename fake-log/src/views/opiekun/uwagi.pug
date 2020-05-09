@@ -1,0 +1,21 @@
+extends layout
+
+append content
+  main.mainContainer
+    div
+      h1 Uwagi
+
+      //h2 Brak
+
+      each note in notes
+          h2 #{note.date}
+          article
+            div.daneWiersz
+              div.tytul Nauczyciel:
+              div.wartosc= note.teacher
+            div.daneWiersz
+              div.tytul Kategoria:
+              div.wartosc= note.category
+            div.daneWiersz
+              div.tytul Treść:
+              div.wartosc= note.content

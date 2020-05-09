@@ -1,0 +1,42 @@
+extends layout
+
+append content
+  main.mainContainer
+    h1 Lekcje zrealizowane
+
+    fieldset.pseudoForm
+      form#filterForm.columns(action="/powiatwulkanowy/123456/Lekcja.mvc/Zrealizowane", method="get")
+        .columnSection
+          div
+            label(for="idPrzedmiot") Przedmiot:
+            select#idPrzedmiot(data-val="true", data-val-number="The field IdPrzedmiot must be a number.", name="idPrzedmiot")
+              option(selected="selected", value="-1") Wszystkie
+              each item in subjects
+                option(value=item.Id)= item.Nazwa
+            div
+        .columnSection
+          div
+            label(for="start") Zakres od:
+            input#start(type="text", name="start", placeholder="dd.mm.rrrr" title="Data początkowa" value="24.09.2018")
+          div
+            label(for="end") Zakres do:
+            input#end(type="text", name="end", placeholder="dd.mm.rrrr", value="23.10.2018", readonly="readonly", title="Data końcowa. Wybierz przedmiot aby odblokować pole.")
+
+    each day,key in data
+      h2= key
+
+      each item in day
+        article
+          div.daneWiersz
+            div.tytul Lekcja:
+            div.wartosc= item.number
+          div.daneWiersz
+            div.tytul Przedmiot i temat:
+            div.wartosc #{item.subject}, #{item.topic}
+          div.daneWiersz
+            div.tytul Nauczyciel:
+            div.wartosc #{item.teacher} [#{item.teacherSymbol}]
+          if item.absence
+            div.daneWiersz
+              div.tytul Nieobecność:
+              div.wartosc= item.absence

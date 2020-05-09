@@ -1,0 +1,117 @@
+[
+  {
+    "Id": 26,
+    "Kod": "Akt",
+    "Nazwa": "A - aktywność (czarny)"
+  },
+  {
+    "Id": 27,
+    "Kod": "Bież",
+    "Nazwa": "B - bieżące (fiol)"
+  },
+  {
+    "Id": 28,
+    "Kod": "Kart",
+    "Nazwa": "K - kartkówka (zielony)"
+  },
+  {
+    "Id": 29,
+    "Kod": "Spr",
+    "Nazwa": "S - sprawdzian (czerwony)"
+  },
+  {
+    "Id": 30,
+    "Kod": "Z.dom",
+    "Nazwa": "Zd - zadanie domowe (czarny)"
+  },
+  {
+    "Id": 65,
+    "Kod": "odp",
+    "Nazwa": "OD - odpowiedź ustna (nieb)"
+  },
+  {
+    "Id": 67,
+    "Kod": "ref",
+    "Nazwa": "Referat"
+  },
+  {
+    "Id": 68,
+    "Kod": "zewn",
+    "Nazwa": "Sprawdzian zewnętrzny"
+  },
+  {
+    "Id": 69,
+    "Kod": "tsm",
+    "Nazwa": "Test sprawności motorycznej"
+  },
+  {
+    "Id": 70,
+    "Kod": "tu",
+    "Nazwa": "Test umiejętności"
+  },
+  {
+    "Id": 71,
+    "Kod": "zs",
+    "Nazwa": "Zawody sportowe"
+  },
+  {
+    "Id": 72,
+    "Kod": "bs",
+    "Nazwa": "Brak stroju"
+  },
+  {
+    "Id": 73,
+    "Kod": "r",
+    "Nazwa": "Rozgrzewka"
+  },
+  {
+    "Id": 74,
+    "Kod": "pr_dł",
+    "Nazwa": "Praca długoterminowa"
+  },
+  {
+    "Id": 75,
+    "Kod": "ze_ćwi",
+    "Nazwa": "Zeszyt ćwiczeń"
+  },
+  {
+    "Id": 76,
+    "Kod": "Inne",
+    "Nazwa": "Inne"
+  },
+  {
+    "Id": 77,
+    "Kod": "popspr",
+    "Nazwa": "Poprawa sprawdzianu"
+  },
+  {
+    "Id": 78,
+    "Kod": "PK",
+    "Nazwa": "Praca klasowa"
+  },
+  {
+    "Id": 79,
+    "Kod": "Re",
+    "Nazwa": "Recytacja"
+  },
+  {
+    "Id": 80,
+    "Kod": "dyk",
+    "Nazwa": "Dyktando"
+  },
+  {
+    "Id": 81,
+    "Kod": "lek",
+    "Nazwa": "Lektura"
+  },
+  {
+    "Id": 82,
+    "Kod": "sp_wiedzy",
+    "Nazwa": "Sprawdzian wiedzy"
+  },
+  {
+    "Id": 83,
+    "Kod": "egz_próbny",
+    "Nazwa": "Egzamin próbny"
+  }
+]

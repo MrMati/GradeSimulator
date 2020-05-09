@@ -1,0 +1,27 @@
+doctype html
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        block extraHeader
+    body
+        div.wrapper
+            block content
+        footer.footer
+            ul.footer__nav
+                li
+                    a(href=proto + "://" + host) Start
+                li
+                    a(href=proto + "://api." + host) api
+                li
+                    a(href=proto + "://cufs." + host) cufs
+                li
+                    a(href=proto + "://uonetplus." + host + "/powiatwulkanowy/Start.mvc/Index") uonetplus
+                li
+                    a(href=proto + "://uonetplus-uczen." + host) uonetplus-uczen
+                li
+                    a(href=proto + "://uonetplus-opiekun." + host + "/powiatwulkanowy/123456") uonetplus-opiekun
+                li
+                    a(href=proto + "://uonetplus-uzytkownik." + host) uonetplus-uzytkownik
+
+        block extraFooter

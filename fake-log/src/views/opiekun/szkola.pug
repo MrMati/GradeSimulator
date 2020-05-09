@@ -1,0 +1,41 @@
+extends layout
+
+append content
+  main.mainContainer
+    h1 Szkoła
+
+    article
+      div.daneWiersz
+        span.tytul Nazwa szkoły:
+        span.wartosc= userInfo.JednostkaNazwa
+      div.daneWiersz
+        span.tytul Adres szkoły:
+        span.wartosc Ul. Wulkanowego 30, 30-300 Fakelog.cf, Polska
+      div.daneWiersz
+        span.tytul Telefon:
+        span.wartosc +30 300 300 300
+      div.daneWiersz
+        span.tytul Imię i nazwisko dyrektora:
+        span.wartosc= headMaster
+      div.daneWiersz
+        span.tytul Imię i nazwisko pedagoga:
+        span.wartosc
+
+
+    h1 Nauczyciele
+
+    p Klasa: #{userInfo.OddzialKod}, Wychowawcy: #{tutor}
+    br
+
+    table
+      thead
+        tr.title
+          th Lp.
+          th Przedmiot
+          th Nauczyciel
+      tbody
+        each item, i in teachers
+          tr
+            td= i + 1
+            td= item.subject
+            td= item.name

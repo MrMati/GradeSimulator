@@ -1,0 +1,45 @@
+extends layout
+
+append extraFooter
+    script
+        | document.querySelector("#widokProsty").addEventListener("change", () => {
+        |   location = 'Wszystkie?details=1';
+        | });
+
+append content
+    main.mainContainer
+        h1 Oceny
+
+        #filters
+            div
+                label(for="okresyKlasyfikacyjneDropDownList") Okres klasyfikacyjny:
+                select#okresyKlasyfikacyjneDropDownList(name="okresyKlasyfikacyjneDropDownList")
+                    option(value="12") 1
+                    option(value="14" selected="selected") 2
+
+            div
+                span Widok ocen cząstkowych:
+                input#widokProsty(name="szczegolyOcenRadio" value="1" type="radio")
+                label(for="widokProsty") Skrócony
+                input#widokSzczegolowy(name="szczegolyOcenRadio" value="2" checked="checked" type="radio")
+                label(for="widokSzczegolowy") Szczegółowy
+
+        table.ocenySzczegoly-table
+            thead
+                tr
+                    th Przedmiot
+                    th Ocena cząstkowa
+                    th Opis
+                    th Waga
+                    th Data
+                    th Nauczyciel
+            tbody
+                each item in data
+                    tr
+                        td= item.subject
+                        td.break-word
+                            span.ocenaCzastkowa(style="color:#" + item.color)= item.value
+                        td.break-word= item.description ? item.symbol + ", " + item.description : item.symbol
+                        td= item.weight
+                        td= item.date
+                        td= item.teacher

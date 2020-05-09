@@ -1,0 +1,32 @@
+[
+  {  
+    "NazwaPrzedmiotu": "Zachowanie",
+    "Opis": "Zawsze pomaga nauczycielom, między innymi w rozwiązywaniu problemów z komputerem oraz rówieśnikom w nauce. Nie rozmawia na lekcji, zawsze odrabia zadania domowe. Uczeń zasługuje na ocene bardzo dobrą.",
+    "IsReligiaEtyka": false
+  },
+  {  
+    "NazwaPrzedmiotu": "Religia/Etyka",
+    "Opis": "5",
+    "IsReligiaEtyka": true
+  },
+  {  
+    "NazwaPrzedmiotu": "Edukacja polonistyczna",
+    "Opis": "dostateczny",
+    "IsReligiaEtyka": false
+  },
+  {
+    "NazwaPrzedmiotu": "Edukacja matematyczna",
+    "Opis": "Uczeń opanował materiał w stopniu dopuszczającym. Należy popracować nad tabliczką mnożenia do 10. Umiejętność dodawania do 20 opanowana w stopniu bardzo dobrym.",
+    "IsReligiaEtyka": false
+  },
+  {  
+    "NazwaPrzedmiotu": "Zajęcia dodatkowe",
+    "Opis": "",
+    "IsReligiaEtyka": false
+  },
+  {  
+    "NazwaPrzedmiotu": "Zajęcia inne",
+    "Opis": "Uczeń nie uczęszcza na żadne oceniane zajęcia dodatkowe.",
+    "IsReligiaEtyka": false
+  }
+]

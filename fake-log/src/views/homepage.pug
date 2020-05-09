@@ -1,0 +1,73 @@
+extends layout
+
+append extraHeader
+    script
+        | var VParam = {
+        |        rootUrl: 'https://uonetplus.fakelog.cf/',
+        |        clientSymbol: 'powiatwulkanowy',
+        |        appVersion: '19.9.0.3497',
+        |        permissions: 'YRQQQJHFcxow5uBZiwTjcDyhwXxvaoocrjAQedoujHQn37pJCREzEtxxYkKeP4VF2AVzVAz8M3KBhFgCcgQKn9WZgDnmimXvgDF9WiXcv6LS9EvYKMBMHzcSSvWogYg5EJMvB8j8GHUckvNa9gcNGa6VXTNU7zUHnSt7s8PEvjLp3T4QyVs3pnsAREKig9jn8jqvaf27QHnTDQpX5tpozvkK5GU9NifF99akoCeBakWFA3n5kXg8h2eBGKspQL9u9DQX7E2zYwTTKqDDYFDnaqjMkUZGjxzY5KG6Lbcg8PtygH446hhK7TZngsARv2HdAbaEFrHdbkDuami74DMwvWmsXXQA7LEC9yiTBKrf5z5CUhueMHiP7E9Jfdp6enmYDeLww6H4FsCFUV6rqkfHee7426NW2R6yvX3ocN888oJCpx96RNhVEiXzKdrhz9Ke9dkHzx',
+        |  };
+
+block content
+    div.startScreen
+        div.topBar
+            div.logotype Wulkanowy
+            div.panelTopBar
+                span.userdata #{userInfo.UzytkownikLogin} (
+                    a(href=uonetplusOpiekun + "/powiatwulkanowy/LoginEndpoint.aspx?logout=true") wyloguj
+                    | )
+        div.holder
+            div.widgetBar.pracownik.klient
+                div.applicationInfo
+                    div.applicationName Fake
+                        span UONET+
+                div.widget.date#date 1 stycznia 1970
+                    br
+                    | poniedziałek
+                div.widget.time#time 12:37
+
+            div.content#content
+                div.panel.linkownia.pracownik.klient
+
+                    // # old student
+
+                    // many schools
+                    #idAppUczen.subDiv
+                        .appLink
+                            a(href=uonetplusOpiekun + "/powiatwulkanowy/123456/Start/Index/")
+                                span.header.directLink SZK1
+                            br
+                            a(href=uonetplusOpiekun + "/powiatwulkanowy/123457/Start/Index/")
+                                span.header.directLink SZK2
+                            br
+
+                    // one school
+                    .appLink
+                        a(href=uonetplusOpiekun + "/powiatwulkanowy/123458/Start/Index/")
+                            .imagedHeader.directLink
+                                #idEmptyAppUczen
+                                    .name Uczeń
+
+                    // # new student
+
+                    // many schools
+                    #idAppUczenExt
+                        .newAppLink
+                            a(href=uonetplusUczen + "/powiatwulkanowy/123456/")
+                                span.header.directLink SZK1
+                            br
+                            a(href=uonetplusUczen + "/powiatwulkanowy/123457/")
+                                span.header.directLink SZK2
+                            br
+
+                    // one school
+                    .newAppLink
+                        .link
+                            a(href=uonetplusUczen + "/powiatwulkanowy/123458/")
+                                .directLink
+                                    #idEmptyAppUczenExt
+                                        .name Uczeń NOWOŚĆ
+
+            .appLink
+                a(href="/powiatwulkanowy/Start.mvc/Endpoints") Kafelki

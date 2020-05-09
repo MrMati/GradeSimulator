@@ -1,0 +1,74 @@
+[
+  {
+    "Id": 40,
+    "Symbol": "●",
+    "Nazwa": "obecność",
+    "Aktywny": true,
+    "WpisDomyslny": true,
+    "IdKategoriaFrek": 1
+  },
+  {
+    "Id": 41,
+    "Symbol": "—",
+    "Nazwa": "nieobecność",
+    "Aktywny": true,
+    "WpisDomyslny": false,
+    "IdKategoriaFrek": 2
+  },
+  {
+    "Id": 42,
+    "Symbol": "u",
+    "Nazwa": "nieob. uspraw.",
+    "Aktywny": true,
+    "WpisDomyslny": false,
+    "IdKategoriaFrek": 3
+  },
+  {
+    "Id": 43,
+    "Symbol": "s",
+    "Nazwa": "spóźnienie",
+    "Aktywny": true,
+    "WpisDomyslny": false,
+    "IdKategoriaFrek": 4
+  },
+  {
+    "Id": 44,
+    "Symbol": "su",
+    "Nazwa": "spóźn. uspr.",
+    "Aktywny": true,
+    "WpisDomyslny": false,
+    "IdKategoriaFrek": 5
+  },
+  {
+    "Id": 45,
+    "Symbol": "ns",
+    "Nazwa": "nieob. uspr. p.s.",
+    "Aktywny": true,
+    "WpisDomyslny": false,
+    "IdKategoriaFrek": 6
+  },
+  {
+    "Id": 46,
+    "Symbol": "z",
+    "Nazwa": "zwolniony",
+    "Aktywny": true,
+    "WpisDomyslny": false,
+    "IdKategoriaFrek": 7
+  },
+  {
+    "Id": 47,
+    "Symbol": "",
+    "Nazwa": "usunięty wpis",
+    "Aktywny": true,
+    "WpisDomyslny": false,
+    "IdKategoriaFrek": 8
+  },
+  {
+    "Id": 55,
+    "Symbol": "zr",
+    "Nazwa": "zwolniony przez rodzica",
+    "Aktywny": false,
+    "WpisDomyslny": false,
+    "IdKategoriaFrek": 3
+  }
+]

@@ -1,0 +1,123 @@
+.startScreen {
+
+  .topBar {
+    background: #43434d;
+    color: #fff;
+    padding: 10px;
+    font-size: smaller;
+    overflow: hidden;
+
+    .logotype {
+      width: 50%;
+      float: left;
+    }
+
+    .panelTopBar {
+      float: right;
+      text-align: right;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  .holder {
+    margin-top: 10px;
+  }
+
+  .widgetBar {
+    overflow: hidden;
+
+    .applicationInfo {
+      float: left;
+    }
+
+    .applicationName {
+      color: #8B0000;
+      font-size: 40px;
+      line-height: 70px;
+
+      span {
+        color: #95b43f;
+      }
+    }
+
+    .widget {
+      float: right;
+      padding: 5px 10px;
+      background: #4462a2;
+      color: #fff;
+      height: 50px;
+      margin: 10px 0 10px 10px;
+      text-align: center;
+    }
+
+    .time {
+      font-size: 36px;
+    }
+
+  }
+
+  .content {
+    .panel {
+      color: #fff;
+    }
+
+    .linkownia {
+      background: #6dabd8;
+      display: inline-flex;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+
+        &:hover,
+        &:focus,
+        &:active {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    // one school
+    #idEmptyAppUczen, #idEmptyAppUczenExt {
+      .name {
+        padding: 20px;
+      }
+    }
+
+    // many schools
+    #idAppUczen, #idAppUczenExt {
+      display: block;
+
+      br {
+        display: none;
+      }
+
+      a {
+        display: inline-block;
+        padding: 20px;
+        border-right: 1px dotted;
+      }
+    }
+
+    .szczesliweNumery {
+      max-width: 310px;
+      background: #22bb6e;
+      margin: 10px 0;
+      padding: 20px;
+
+      .imagedHeader {
+        border-bottom: 1px solid;
+        padding-bottom: 10px;
+      }
+
+      .header {
+        padding: 10px 0;
+        font-weight: bold;
+      }
+    }
+  }
+}

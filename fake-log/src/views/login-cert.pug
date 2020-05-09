@@ -1,0 +1,16 @@
+doctype html
+html
+    head
+        title Working...
+    body
+        form(method="POST" name="hiddenform" action=uonetplusOpiekun + "/" + symbol + "/LoginEndpoint.aspx")
+            input(type="hidden" name="wa" value="wsignin1.0")
+            input(type="hidden" name="wresult" value=cert)
+            input(type="hidden" name="wctx" value=uonetplusOpiekun + "/" + symbol + "/LoginEndpoint.aspx")
+
+            noscript
+                p Script is disabled. Click Submit to continue.
+                input(type="submit" value="Submit")
+
+            script
+                | window.setTimeout('document.forms[0].submit()', 0);

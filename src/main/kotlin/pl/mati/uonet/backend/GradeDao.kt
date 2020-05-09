@@ -3,8 +3,8 @@ package pl.mati.uonet.backend
 import pl.mati.uonet.backend.cache.InMemoryCache
 import java.util.function.Consumer
 
-class GradeDao {
-    private val sdk = getSdkObject()
+class GradeDao(val devMode: Boolean) {
+    private val sdk = getSdkObject(devMode)
 
     private val JSONcache = InMemoryCache()
 

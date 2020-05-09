@@ -1,0 +1,68 @@
+extends ../layout
+
+append extraFooter
+    script
+        | Array.from(document.querySelectorAll("#uczenDropDownList, #dziennikDropDownList")).forEach(el => {
+        |   el.addEventListener("change", (e) => {
+        |     location = e.target.value;
+        |   });
+        | });
+
+prepend content
+    header(data-organization-name=userInfo.JednostkaNazwa, data-application-name="Uczniowie Optivum FakeNET+")
+
+        a
+            h1 Witryna ucznia i rodzica
+
+        nav
+            ul
+            ul
+                li=userInfo.UzytkownikLogin
+                li
+                    a(href=opiekunRoot + "/LoginEndpoint.aspx?logout=true") Wyloguj
+                li
+                    a(href=uonetplusUrl + "/powiatwulkanowy") Start
+
+    nav#menuGlowne
+        ul
+            li
+                a(href=opiekunRoot + "/Oceny.mvc/Wszystkie") Oceny
+            li
+                a(href=opiekunRoot + "/Frekwencja.mvc") Frekwencja
+            li
+                a(href="#" + opiekunRoot + "/Egzaminy.mvc/EgzaminyZewnetrzne") Egzaminy zewnętrzne
+            li
+                a(href=opiekunRoot + "/UwagiOsiagniecia.mvc/Wszystkie") Uwagi i osiągnięcia
+            li
+                a(href=opiekunRoot + "/Statystyki.mvc/Uczen") Uczeń na tle klasy
+            li
+                a(href=opiekunRoot + "/Uczen.mvc/DanePodstawowe") Dane ucznia
+        ul
+            li
+                a(href=opiekunRoot + "/Lekcja.mvc/PlanZajec") Plan zajęć
+            li
+                a(href=opiekunRoot + "/Lekcja.mvc/Zrealizowane") Lekcje zrealizowane
+            li
+                a(href=opiekunRoot + "/Sprawdziany.mvc/Terminarz") Sprawdziany
+            li
+                a(href=opiekunRoot + "/ZadaniaDomowe.mvc") Zadania domowe
+            li
+                a(href=opiekunRoot + "/Szkola.mvc/Nauczyciele") Szkoła i nauczyciele
+        ul
+            li
+                a(href="https://github.com/wulkanowy/fake-log/issues") Pomoc
+            li
+                a(href=opiekunRoot + "/DostepMobilny.mvc") Dostęp mobilny
+    ul#idSection
+        li
+            label(for="uczenDropDownList") Uczeń:
+            select#uczenDropDownList(name="uczenDropDownList")
+                option(selected="selected", value=currentHost + opiekunRoot +"/Uczen/UczenOnChange?&id=" + userInfo.Id) #{userInfo.Imie} #{userInfo.Nazwisko}
+                option(value=currentHost + opiekunRoot +"/Uczen/UczenOnChange?&id=2") Joanna Czerwińska
+        li
+            label(for="dziennikDropDownList") Dziennik:
+            select#dziennikDropDownList(name="dziennikDropDownList")
+                option(value=currentHost + opiekunRoot + "/Dziennik/DziennikOnChange?&id=9") 1A 2015
+                option(value=currentHost + opiekunRoot + "/Dziennik/DziennikOnChange?&id=11") 2A 2016
+                option(value=currentHost + opiekunRoot + "/Dziennik/DziennikOnChange?&id=13") 3A 2017
+                option(selected="selected", value=currentHost + opiekunRoot + "/Dziennik/DziennikOnChange?&id=15") #{userInfo.OddzialKod} 2018

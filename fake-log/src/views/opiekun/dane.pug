@@ -1,0 +1,74 @@
+extends layout
+
+append content
+    main.mainContainer
+        h1 Dane
+
+        h2 Dane osobowe
+        article
+            div.daneWiersz
+                span.tytul Imię (imiona) nazwisko:
+                span.wartosc #{userInfo.Imie} #{userInfo.Imie2} #{userInfo.Nazwisko}
+            div.daneWiersz
+                span.tytul Data i miejsce urodzenia:
+                span.wartosc= data.dateAndBirthPlace
+            div.daneWiersz
+                span.tytul PESEL:
+                span.wartosc= data.pesel
+            div.daneWiersz
+                span.tytul Płeć:
+                span.wartosc= userInfo.UczenPlec === 1 ? "Mężczyzna" : "Kobieta"
+            div.daneWiersz
+                span.tytul Obywatelstwo polskie:
+                span.wartosc= data.polishCitizenship
+            div.daneWiersz
+                span.tytul Nazwisko rodowe:
+                span.wartosc= data.familyName
+            div.daneWiersz
+                span.tytul Imię matki i ojca:
+                span.wartosc= data.parentsName
+
+
+        h2 Dane adresowe
+        article
+            div.daneWiersz
+                span.tytul Adres zamieszkania:
+                span.wartosc
+            div.daneWiersz
+                span.tytul Adres zameldowania:
+                span.wartosc
+            div.daneWiersz
+                span.tytul Adres korespondencji:
+                span.wartosc
+
+        h2 Kontakt
+        article
+            div.daneWiersz
+                span.tytul Telefon:
+                span.wartosc= data.telephone
+            div.daneWiersz
+                span.tytul Telefon komórkowy:
+                span.wartosc= data.cellphone
+            div.daneWiersz
+                span.tytul E-mail:
+                span.wartosc= userInfo.UzytkownikLogin
+
+        h1 Rodzina
+
+        for member in data.family
+            article
+                div.daneWiersz
+                    span.tytul Nazwisko i imię:
+                    span.wartosc= member.name
+                div.daneWiersz
+                    span.tytul Stopień pokrewieństwa:
+                    span.wartosc= member.kinship
+                div.daneWiersz
+                    span.tytul Adres:
+                    span.wartosc= member.address
+                div.daneWiersz
+                    span.tytul Telefony:
+                    span.wartosc= member.telephones
+                div.daneWiersz
+                    span.tytul E-mail:
+                    span.wartosc= member.email

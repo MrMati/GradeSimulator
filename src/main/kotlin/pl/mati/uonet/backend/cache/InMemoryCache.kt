@@ -40,7 +40,6 @@ class InMemoryCache : Cache {
         cleaningUpQueue.put(DelayedCacheObject(key, reference, expiryTime))
     }
 
-
     override fun remove(key: String) {
         cache.remove(key)
     }

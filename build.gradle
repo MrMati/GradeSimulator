@@ -1,14 +1,15 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.3.72' apply false
     id "org.jlleitschuh.gradle.ktlint" version "9.2.1"
-    id("com.github.johnrengelman.shadow") version "5.2.0"
-
+    id "com.github.johnrengelman.shadow" version "5.2.0"
+    id 'com.github.psxpaul.execfork' version '0.1.13'
 }
 
 apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'kotlin'
 apply plugin: "org.jlleitschuh.gradle.ktlint"
+
 
 
 ext {
@@ -26,7 +27,7 @@ repositories {
     maven { url "https://jitpack.io" }
 }
 
-version = PUBLISH_VERSION
+version = PUBLISH_VERSION as Object
 group = "pl.mati.uonet.backend"
 
 
@@ -72,7 +73,33 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation "io.javalin:javalin:3.8.0"
 
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+    testImplementation 'com.konghq:unirest-java:3.7.02'
+    testImplementation 'org.assertj:assertj-core:3.15.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+import org.gradle.nativeplatform.platform.internal.DefaultNativePlatform
+
+task startDaemon(type: com.github.psxpaul.task.ExecFork) {
+    if (DefaultNativePlatform.getCurrentOperatingSystem().isWindows()) {
+        executable = 'node.exe'
+    } else {
+        executable = 'node'
+    }
+
+    args = ['bin/www']
+    workingDir = "$projectDir/fake-log/"
+    //standardOutput = "$projectDir/daemon.log"
+    //errorOutput = "$projectDir/daemon-error.log"
+    stopAfter = test
+    waitForOutput = 'ready'
 
 }
 
+test.dependsOn startDaemon
 

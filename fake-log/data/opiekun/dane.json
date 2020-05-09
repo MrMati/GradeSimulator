@@ -1,0 +1,29 @@
+{
+  "name": "Jan Kowalski//",
+  "dateAndBirthPlace": "01.01.1970, Warszawa",
+  "pesel": "12345678900",
+  "gender": "Mężczyzna//",
+  "polishCitizenship": "Tak",
+  "familyName": "Nowak",
+  "parentsName": "Monika, Kamil",
+  "telephone": "",
+  "cellphone": "-",
+  "email": "",
+
+  "family": [
+    {
+      "name": "Monika Nowak",
+      "kinship": "-",
+      "address": "",
+      "telephones": "",
+      "email": "-"
+    },
+    {
+      "name": "Kamil Nowak",
+      "kinship": "-",
+      "address": "",
+      "telephones": "",
+      "email": "-"
+    }
+  ]
+}

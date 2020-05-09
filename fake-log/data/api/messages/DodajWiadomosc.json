@@ -1,0 +1,18 @@
+{
+  "WiadomoscId": 32798,
+  "Nadawca": null,
+  "NadawcaId": 0,
+  "Adresaci": null,
+  "Tytul": null,
+  "Tresc": null,
+  "DataWyslania": "2018-06-11",
+  "DataWyslaniaUnixEpoch": 0,
+  "GodzinaWyslania": "09:38",
+  "DataPrzeczytania": null,
+  "DataPrzeczytaniaUnixEpoch": null,
+  "GodzinaPrzeczytania": null,
+  "StatusWiadomosci": "Widoczna",
+  "FolderWiadomosci": 0,
+  "Nieprzeczytane": null,
+  "Przeczytane": null
+}

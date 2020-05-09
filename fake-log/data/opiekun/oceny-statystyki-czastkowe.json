@@ -1,0 +1,74 @@
+[
+  {
+    "subject": "Język polski",
+    "grade": "6",
+    "pupilAmount": 0,
+    "classAmount": 0
+  },
+  {
+    "subject": "Język polski",
+    "grade": "5",
+    "pupilAmount": 0,
+    "classAmount": 24
+  },
+  {
+    "subject": "Język polski",
+    "grade": "4",
+    "pupilAmount": 0,
+    "classAmount": 42
+  },
+  {
+    "subject": "Język polski",
+    "grade": "3",
+    "pupilAmount": 2,
+    "classAmount": 63
+  },
+  {
+    "subject": "Język polski",
+    "grade": "2",
+    "pupilAmount": 4,
+    "classAmount": 65
+  },
+  {
+    "subject": "Język polski",
+    "grade": "1",
+    "pupilAmount": 3,
+    "classAmount": 60
+  },
+  {
+    "subject": "Matematyka",
+    "grade": "6",
+    "pupilAmount": 0,
+    "classAmount": 2
+  },
+  {
+    "subject": "Matematyka",
+    "grade": "5",
+    "pupilAmount": 1,
+    "classAmount": 40
+  },
+  {
+    "subject": "Matematyka",
+    "grade": "4",
+    "pupilAmount": 1,
+    "classAmount": 26
+  },
+  {
+    "subject": "Matematyka",
+    "grade": "3",
+    "pupilAmount": 1,
+    "classAmount": 35
+  },
+  {
+    "subject": "Matematyka",
+    "grade": "2",
+    "pupilAmount": 0,
+    "classAmount": 55
+  },
+  {
+    "subject": "Matematyka",
+    "grade": "1",
+    "pupilAmount": 3,
+    "classAmount": 40
+  }
+]

@@ -1,0 +1,105 @@
+extends layout
+
+mixin nav
+  .navigation
+    a.button-prev(href="/powiatwulkanowy/123456/Frekwencja.mvc?data=" + tics.prev) Poprzedni tydzień
+    a.button-next(href="/powiatwulkanowy/123456/Frekwencja.mvc?data=" + tics.next) Następny tydzień
+
+append content
+  main.mainContainer
+    h1 Frekwencja
+    fieldset.pseudoForm
+      label(for="idFrekwencji") Uwzględniane wpisy frekwencyjne:
+      select#idFrekwencji(name="idFrekwencji")
+        option(value="-1") Wszystkie wpisy
+        option(value="2") Nieobecność nieusprawiedliwiona
+        option(value="3") Nieobecność usprawiedliwiona
+        option(value="6") Nieobecność z przyczyn szkolnych
+        option(value="4") Spóźnienie nieusprawiedliwione
+        option(value="5") Spóźnienie usprawiedliwione
+        option(value="7") Zwolnienie
+    +nav
+    .tableForm
+      table.presentData
+        thead
+          tr
+            th.lesson Lekcja
+            each item in weekDays
+              th
+                | #{item[0]}
+                br
+                | #{item[1]}
+        tbody
+          each item,key in data
+            tr
+              td= key
+              each cell in item
+                td.padding-zero
+                  div(class={
+                      'x-obecnosc': cell.presence && !cell.lateness && "Nieobecny z przyczyn szkolnych" !== cell.attendanceInfo,
+                      'x-nieobecnosc-nieuspr': cell.absence && !cell.excused,
+                      'x-nieobecnosc-uspr': cell.absence && cell.excused,
+                      'x-nieobecnosc-przycz-szkol': "Nieobecny z przyczyn szkolnych" === cell.attendanceInfo,
+                      'x-sp-nieusprawiedliwione': cell.lateness && !cell.excused,
+                      'x-sp-spr': cell.lateness && cell.excused,
+                      'x-sp-zwolnienie': cell.exemption,
+                      'x-sp-nieobecny-w-oddziale': cell.deleted
+                  })
+                    img(alt=cell.attendanceInfo, title=cell.attendanceInfo)
+                    span= cell.subject
+
+    +nav
+
+    h1#statystyki Statystyki
+    div
+      label(for="idPrzedmiot") Przedmiot:
+      select#idPrzedmiot(name="idPrzedmiot")
+        option(value="-1") Wszystkie
+        each item in subjects
+          option(value=item.Id)= item.Nazwa
+        option(value="0") Brak opisu lekcji
+        option(value="492") Opieka nad uczniami
+    h2 Frekwencja od początku roku szkolnego: #{Math.round(fullPresence * 100) / 100}
+    table
+      thead
+        tr
+          th
+          each month in stats
+            th= month.name
+          th Razem
+      tbody
+        tr
+          td.text-center Obecność
+          each item in stats
+            td= item.presence !== 0 ? item.presence : ""
+          td.text-center= sumStats.presence
+        tr
+          td.text-center Nieobecność nieusprawiedliwiona
+          each item in stats
+            td= item.absence !== 0 ? item.absence : ""
+          td.text-center= sumStats.absence
+        tr
+          td.text-center Nieobecność usprawiedliwiona
+          each item in stats
+            td= item.absenceExcused !== 0 ? item.absenceExcused : ""
+          td.text-center= sumStats.absenceExcused
+        tr
+          td.text-center Nieobecność z przyczyn szkolnych
+          each item in stats
+            td= item.absenceForSchoolReasons !== 0 ? item.absenceForSchoolReasons : ""
+          td.text-center= sumStats.absenceForSchoolReasons
+        tr
+          td.text-center Spóźnienie nieusprawiedliwione
+          each item in stats
+            td= item.lateness !== 0 ? item.lateness : ""
+          td.text-center= sumStats.lateness
+        tr
+          td.text-center Spóźnienie usprawiedliwione
+          each item in stats
+            td= item.latenessExcused !== 0 ? item.latenessExcused : ""
+          td.text-center= sumStats.latenessExcused
+        tr
+          td.text-center Zwolnienie
+          each item in stats
+            td= item.exemption !== 0 ? item.exemption : ""
+          td.text-center= sumStats.exemption

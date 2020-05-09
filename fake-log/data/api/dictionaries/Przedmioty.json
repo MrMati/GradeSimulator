@@ -1,0 +1,100 @@
+[
+  {
+    "Id": 300,
+    "Nazwa": "Zajęcia z wychowawcą",
+    "Kod": "godz.wych",
+    "Aktywny": true,
+    "Pozycja": 0
+  },
+  {
+    "Id": 301,
+    "Nazwa": "Język polski",
+    "Kod": "j. polski",
+    "Aktywny": true,
+    "Pozycja": 3
+  },
+  {
+    "Id": 302,
+    "Nazwa": "Historia",
+    "Kod": "historia",
+    "Aktywny": true,
+    "Pozycja": 1
+  },
+  {
+    "Id": 303,
+    "Nazwa": "Etyka",
+    "Kod": "etyka",
+    "Aktywny": true,
+    "Pozycja": 2
+  },
+  {
+    "Id": 304,
+    "Nazwa": "Język angielski",
+    "Kod": "j. angielski",
+    "Aktywny": true,
+    "Pozycja": 4
+  },
+  {
+    "Id": 305,
+    "Nazwa": "Język niemiecki",
+    "Kod": "j. niemiecki",
+    "Aktywny": true,
+    "Pozycja": 5
+  },
+  {
+    "Id": 306,
+    "Nazwa": "Metodologia programowania",
+    "Kod": "metod.programowania",
+    "Aktywny": true,
+    "Pozycja": 6
+  },
+  {
+    "Id": 307,
+    "Nazwa": "Matematyka",
+    "Kod": "matematyka",
+    "Aktywny": true,
+    "Pozycja": 7
+  },
+  {
+    "Id": 308,
+    "Nazwa": "Fizyka",
+    "Kod": "fizyka",
+    "Aktywny": true,
+    "Pozycja": 8
+  },
+  {
+    "Id": 309,
+    "Nazwa": "Chemia",
+    "Kod": "chemia",
+    "Aktywny": true,
+    "Pozycja": 9
+  },
+  {
+    "Id": 310,
+    "Nazwa": "Biologia",
+    "Kod": "biologia",
+    "Aktywny": true,
+    "Pozycja": 10
+  },
+  {
+    "Id": 311,
+    "Nazwa": "Geografia",
+    "Kod": "geografia",
+    "Aktywny": true,
+    "Pozycja": 11
+  },
+  {
+    "Id": 312,
+    "Nazwa": "Informatyka",
+    "Kod": "informatyka",
+    "Aktywny": true,
+    "Pozycja": 12
+  },
+  {
+    "Id": 313,
+    "Nazwa": "Religia",
+    "Kod": "religia",
+    "Aktywny": true,
+    "Pozycja": 13
+  }
+]

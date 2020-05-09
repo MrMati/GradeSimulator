@@ -1,0 +1,32 @@
+[
+  {
+    "subject": "Język angielski",
+    "grade": "celujący",
+    "amount": 0
+  },
+  {
+    "subject": "Język angielski",
+    "grade": "bardzo dobry",
+    "amount": 4
+  },
+  {
+    "subject": "Język angielski",
+    "grade": "dobry",
+    "amount": 8
+  },
+  {
+    "subject": "Język angielski",
+    "grade": "dostateczny",
+    "amount": 9
+  },
+  {
+    "subject": "Język angielski",
+    "grade": "dopuszczający",
+    "amount": 7
+  },
+  {
+    "subject": "Język angielski",
+    "grade": "niedostateczny",
+    "amount": 3
+  }
+]

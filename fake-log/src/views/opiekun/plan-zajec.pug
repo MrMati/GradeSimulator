@@ -1,0 +1,64 @@
+extends layout
+
+mixin nav
+    .navigation
+        a.button-prev(href="/powiatwulkanowy/123456/Lekcja.mvc/PlanZajec?data=" + tics.prev) Poprzedni tydzień
+        a.button-next(href="/powiatwulkanowy/123456/Lekcja.mvc/PlanZajec?data=" + tics.next) Następny tydzień
+
+append content
+    main.mainContainer
+        h1 Plan lekcji
+        +nav
+        div
+            table.presentData
+                thead
+                    tr
+                        th Lekcja
+                        th Pora zajęć
+                        each item in weekDays
+                            th
+                                | #{item[0]}
+                                br
+                                | #{item[1]}
+                tbody
+                    each item,key in data
+                        tr
+                            td= item[0].number
+                            td= `${item[0].start} - ${item[0].end}`
+                            each cell in item
+                                td
+                                    if (!cell.gap)
+                                        div
+                                            if (cell.oldTeacher)
+                                                span.x-treelabel-inv= cell.subject
+                                                span.x-treelabel-inv= cell.oldTeacher
+                                                span.x-treelabel-inv= cell.room
+                                                span.x-treelabel-ppl.x-treelabel-zas= cell.subject
+                                                span.x-treelabel-ppl.x-treelabel-zas= cell.teacher
+                                                span.x-treelabel-ppl.x-treelabel-zas= cell.room
+                                                span.x-treelabel-rlz= cell.info
+                                            else
+                                                if (cell.group)
+                                                    span(class= {'x-treelabel-ppl x-treelabel-inv': cell.canceled})= `${cell.subject} [${cell.group}]`
+                                                    span(class= {'x-treelabel-ppl x-treelabel-inv': cell.canceled})
+                                                else
+                                                    span(class= {'x-treelabel-ppl x-treelabel-inv': cell.canceled})= cell.subject
+                                                span(class= {'x-treelabel-ppl x-treelabel-inv': cell.canceled})= cell.teacher
+                                                span(class= {'x-treelabel-ppl x-treelabel-inv': cell.canceled})= cell.room
+                                                if (cell.info)
+                                                    span.x-treelabel-rlz= cell.info
+        +nav
+
+    .description
+        div
+            span.x-treelabel-ppl Kursywa
+            | - planowane
+        div
+            span.x-treelabel-rlz Zwykła czcionka
+            | - zrealizowane
+        div
+            span.x-treelabel-inv Przekreślone
+            | - odwołane lub przeniesione
+        div
+            span.x-treelabel-zas Pogrubione
+            | - nowe lekcje, przeniesione z innego terminu, zastępstwa

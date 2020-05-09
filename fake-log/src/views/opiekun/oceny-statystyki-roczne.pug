@@ -1,0 +1,42 @@
+extends layout
+
+append extraFooter
+  script
+    | document.querySelector("#ocenyCzastkoweRadio").addEventListener("change", () => {
+    |   location = 'Uczen?rodzajWidoku=1';
+    | });
+
+append content
+  main.mainContainer
+    h1 Uczeń na tle klasy
+
+    form
+      fieldset.pseudoForm
+        div.floatLeft
+          input#ocenyCzastkoweRadio(type="radio" value="1" name="wyborWidokuZadan")
+          label(for="ocenyCzastkoweRadio") Oceny cząstkowe
+        div.floatLeft
+          input#ocenyRoczneRadio(type="radio" value="2" name="wyborWidokuZadan" checked="checked")
+          label(for="ocenyRoczneRadio") Oceny śródroczne/roczne
+      br
+      fieldset.pseudoForm
+        div.float-left
+          label(for="okresyKlasyfikacyjneDropDownList") Okres klasyfikacyjny:
+          select#okresyKlasyfikacyjneDropDownList(name="okresyKlasyfikacyjneDropDownList")
+            option(selected="selected", value="122") 1
+            option(value="123") 2
+
+    h2 Rozkład ocen rocznych i śródrocznych
+    div
+      table
+        thead
+          tr
+            th Przedmiot
+            th Oceny
+            th Klasa
+        tbody
+          each item in data
+            tr
+              td= item.subject
+              td= item.grade
+              td Klasa ocen: #{item.amount}#{item.percent ? ", " + item.percent + "% wszystkich" : "" }

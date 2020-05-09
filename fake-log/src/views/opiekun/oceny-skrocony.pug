@@ -1,0 +1,49 @@
+extends layout
+
+append extraFooter
+    script
+        | document.querySelector("#widokSzczegolowy").addEventListener("change", () => {
+        |   location = 'Wszystkie?details=2';
+        | });
+
+append content
+    main.mainContainer
+        h1 Oceny
+
+        #filters
+            div
+                label(for="okresyKlasyfikacyjneDropDownList") Okres klasyfikacyjny:
+                select#okresyKlasyfikacyjneDropDownList(name="okresyKlasyfikacyjneDropDownList")
+                    option(value="12") 1
+                    option(value="14" selected="selected") 2
+
+            div
+                span Widok ocen cząstkowych:
+                input#widokProsty(name="szczegolyOcenRadio" value="1" checked="checked" type="radio")
+                label(for="widokProsty") Skrócony
+                input#widokSzczegolowy(name="szczegolyOcenRadio" value="2" type="radio")
+                label(for="widokSzczegolowy") Szczegółowy
+
+        table.ocenyZwykle-table.ocenyOpisowe-table
+            thead
+                tr
+                    th Przedmiot
+                    th Oceny cząstkowe
+                    th Średnia
+                    th Przewidywana ocena roczna
+                    th Ocena roczna
+            tbody
+                each item in data.normalGrades
+                    tr
+                        td= item.subject
+                        td.break-word Brak ocen
+                        td= item.average ? item.average : "-"
+                        td= item.predictedRating ? item.predictedRating : "-"
+                        td= item.finalRating ? item.finalRating : "-"
+        h2= "Oceny opisowe "
+        table.ocenyOpisowe-table
+            tbody
+                each item in data.descriptiveGrades
+                    tr
+                        td= item.NazwaPrzedmiotu
+                        td= item.Opis || "Brak oceny opisowej"

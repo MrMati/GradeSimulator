@@ -1,0 +1,60 @@
+version: 2.1
+jobs: # a collection of steps
+  build:
+    parallelism: 1
+    environment:
+      _JAVA_OPTIONS: "-Xmx3g"
+
+    working_directory: ~/circleci-demo # directory where steps will run
+
+    docker: # run the steps with Docker
+      - image: circleci/openjdk:8-jdk-stretch
+
+    steps: # a collection of executable commands
+
+      - checkout # check out source code to working directory
+
+      - run:
+          name: Setup NodeJS
+          command: sudo curl -sL https://deb.nodesource.com/setup_12.x |  sudo bash - && sudo apt-get install -y nodejs
+
+      - restore_cache:
+          key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+      - restore_cache:
+          key: v1-gradle-cache-{{ checksum "build.gradle" }}
+
+      - run:
+          name: Enable execution for gradlew
+          command: chmod +x gradlew
+
+      - run:
+          name: Gradle generate pom for Maven
+          command: ./gradlew install
+
+      - run:
+          name: Maven download depedencies
+          command: mvn -f build/poms/pom-default.xml dependency:go-offline
+
+      - save_cache:
+          paths:
+            - ~/.gradle/wrapper
+          key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+      - save_cache:
+          paths:
+            - ~/.gradle/caches
+          key: v1-gradle-cache-{{ checksum "build.gradle" }}
+
+      - run:
+          name: Run Gradle test
+          command: ./gradlew test
+
+      - store_test_results:
+          path: build/test-results/test/
+
+      - store_artifacts: # store the uberjar as an artifact
+          path: build/libs/
+workflows:
+  version: 2.1
+  workflow:
+    jobs:
+      - build

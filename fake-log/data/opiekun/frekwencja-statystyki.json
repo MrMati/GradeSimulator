@@ -1,0 +1,122 @@
+[
+  {
+    "name": "IX",
+    "presence": 32,
+    "absence": 1,
+    "absenceExcused": 2,
+    "absenceForSchoolReasons": 3,
+    "lateness": 4,
+    "latenessExcused": 5,
+    "exemption": 6
+  },
+  {
+    "name": "X",
+    "presence": 64,
+    "absence": 2,
+    "absenceExcused": 55,
+    "absenceForSchoolReasons": 8,
+    "lateness": 16,
+    "latenessExcused": 24,
+    "exemption": 32
+  },
+  {
+    "name": "XI",
+    "presence": 99,
+    "absence": 3,
+    "absenceExcused": 2,
+    "absenceForSchoolReasons": 0,
+    "lateness": 5,
+    "latenessExcused": 6,
+    "exemption": 0
+  },
+  {
+    "name": "XII",
+    "presence": 55,
+    "absence": 0,
+    "absenceExcused": 33,
+    "absenceForSchoolReasons": 0,
+    "lateness": 5,
+    "latenessExcused": 0,
+    "exemption": 0
+  },
+  {
+    "name": "I",
+    "presence": 88,
+    "absence": 0,
+    "absenceExcused": 2,
+    "absenceForSchoolReasons": 5,
+    "lateness": 5,
+    "latenessExcused": 0,
+    "exemption": 4
+  },
+  {
+    "name": "II",
+    "presence": 44,
+    "absence": 3,
+    "absenceExcused": 2,
+    "absenceForSchoolReasons": 0,
+    "lateness": 5,
+    "latenessExcused": 8,
+    "exemption": 0
+  },
+  {
+    "name": "III",
+    "presence": 33,
+    "absence": 0,
+    "absenceExcused": 2,
+    "absenceForSchoolReasons": 0,
+    "lateness": 5,
+    "latenessExcused": 2,
+    "exemption": 9
+  },
+  {
+    "name": "IV",
+    "presence": 88,
+    "absence": 0,
+    "absenceExcused": 2,
+    "absenceForSchoolReasons": 6,
+    "lateness": 5,
+    "latenessExcused": 0,
+    "exemption": 0
+  },
+  {
+    "name": "V",
+    "presence": 99,
+    "absence": 0,
+    "absenceExcused": 2,
+    "absenceForSchoolReasons": 0,
+    "lateness": 5,
+    "latenessExcused": 0,
+    "exemption": 0
+  },
+  {
+    "name": "VI",
+    "presence": 124,
+    "absence": 6,
+    "absenceExcused": 2,
+    "absenceForSchoolReasons": 0,
+    "lateness": 5,
+    "latenessExcused": 0,
+    "exemption": 0
+  },
+  {
+    "name": "VII",
+    "presence": 0,
+    "absence": 0,
+    "absenceExcused": 0,
+    "absenceForSchoolReasons": 0,
+    "lateness": 0,
+    "latenessExcused": 0,
+    "exemption": 0
+  },
+  {
+    "name": "VIII",
+    "presence": 0,
+    "absence": 0,
+    "absenceExcused": 0,
+    "absenceForSchoolReasons": 0,
+    "lateness": 0,
+    "latenessExcused": 0,
+    "exemption": 0
+  }
+]

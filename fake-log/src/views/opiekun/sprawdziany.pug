@@ -1,0 +1,40 @@
+extends layout
+
+mixin nav
+  .navigation
+    a.button-prev(href="/powiatwulkanowy/123456/Sprawdziany.mvc/Terminarz?rodzajWidoku=2&data=" + tics.prev) Poprzedni tydzień
+    a.button-next(href="/powiatwulkanowy/123456/Sprawdziany.mvc/Terminarz?rodzajWidoku=2&data=" + tics.next) Następny tydzień
+
+append content
+  main.mainContainer
+    h1 Sprawdziany
+    h2 Tydzień #{weekDays[0][1]} - #{weekDays[4][1]}
+    fieldset.pseudoForm
+      legend.floatLeft Widok kalendarza:
+      div.floatLeft
+        input#radioWidokTygodnia(type="radio" value="1" name="wyborWidokuZadan")
+        label(for="radioWidokTygodnia") najbliższe cztery tygodnie
+      div.floatLeft
+        input#radioWidokDnia(type="radio" value="1" name="wyborWidokuZadan" checked="checked")
+        label(for="radioWidokDnia") bieżący tydzień
+    +nav
+    //h2 Nie zaplanowano żadnych sprawdzianów na wybrany tydzień
+
+    each day, key in data
+      div
+        h2 #{day[0].dayName}, #{key}
+        each exam in day
+          article
+            div.daneWiersz
+              div.tytul Przedmiot i grupa:
+              div.wartosc= exam.subject
+            div.daneWiersz
+              div.tytul Rodzaj sprawdzianu:
+              div.wartosc= exam.type
+            div.daneWiersz
+              div.tytul Opis:
+              div.wartosc= exam.description
+            div.daneWiersz
+              div.tytul Nauczyciel i data wpisu:
+              div.wartosc #{exam.teacher} [#{exam.teacherSymbol}], #{exam.entryDate}
+    +nav

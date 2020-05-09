@@ -1,0 +1,20 @@
+[
+  {
+    "WiadomoscId": 89626,
+    "Nadawca": "Nazwisko Imię",
+    "NadawcaId": 3604,
+    "Adresaci": [],
+    "Tytul": "Lorem ipsum",
+    "Tresc": "Lorem ipsum dolor sit amet",
+    "DataWyslania": "06.02.2018",
+    "DataWyslaniaUnixEpoch": 1517938585,
+    "GodzinaWyslania": "18:36",
+    "DataPrzeczytania": "27.04.2018",
+    "DataPrzeczytaniaUnixEpoch": 1524844708,
+    "GodzinaPrzeczytania": "17:58",
+    "StatusWiadomosci": "Usunieta",
+    "FolderWiadomosci": "Odebrane",
+    "Nieprzeczytane": null,
+    "Przeczytane": null
+  }
+]

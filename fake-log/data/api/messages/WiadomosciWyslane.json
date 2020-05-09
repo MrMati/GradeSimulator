@@ -1,0 +1,29 @@
+[
+  {
+    "WiadomoscId": 32798,
+    "Nadawca": null,
+    "NadawcaId": 0,
+    "Adresaci": [
+      {
+        "LoginId": 100,
+        "Nazwa": "Karolina Kowalska [AN] - pracownik (Fake123456)"
+      },
+      {
+        "LoginId": 101,
+        "Nazwa": "Zofia Czerwińska [NA] - pracownik (Fake123456)"
+      }
+    ],
+    "Tytul": "Usprawiedliwienie nieobecności",
+    "Tresc": "Proszę o usprawiedliwienie nieobecności mojego syna",
+    "DataWyslania": "11.06.2018",
+    "DataWyslaniaUnixEpoch": 1528702715,
+    "GodzinaWyslania": "09:38",
+    "DataPrzeczytania": null,
+    "DataPrzeczytaniaUnixEpoch": null,
+    "GodzinaPrzeczytania": null,
+    "StatusWiadomosci": "Widoczna",
+    "FolderWiadomosci": "Wyslane",
+    "Nieprzeczytane": "1",
+    "Przeczytane": "1"
+  }
+]

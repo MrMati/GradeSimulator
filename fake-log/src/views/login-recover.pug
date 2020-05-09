@@ -1,0 +1,25 @@
+extends layout
+
+block extraHeader
+    link(rel='stylesheet' href='/stylesheets/login.css')
+
+block content
+    div#MainDiv
+        form(method="post")
+
+            .LogOnBoard
+
+                h1#h1Default Przywracanie dostępu
+                h2 Podaj swój adres e-mail, potwierdź autentyczność operacji i naciśnij przycisk "Wyślij wiadomość".
+                h2 Na podany adres e-mail system wyśle wiadomość zawierającą dalsze instrukcje.
+                div
+                    label(for="LoginName") E-mail:
+                    input(name="LoginName" id="LoginName" type="text" autofocus="autofocus")
+                div
+                    script(async defer src='https://www.google.com/recaptcha/api.js')
+                    .g-recaptcha(data-sitekey='6LeAGMYUAAAAAMszd5VWZTEb5WQHqsNT1F4GCqUd')
+
+                div
+                    input(type="submit" value="Wyślij Wiadomość >")
+
+                div.ErrorMessage= message

@@ -1,0 +1,98 @@
+[
+  {
+    "Id": 76,
+    "Numer": 1,
+    "Poczatek": 25200,
+    "PoczatekTekst": "08:00",
+    "Koniec": 27900,
+    "KoniecTekst": "08:45"
+  },
+  {
+    "Id": 77,
+    "Numer": 2,
+    "Poczatek": 28500,
+    "PoczatekTekst": "08:55",
+    "Koniec": 31200,
+    "KoniecTekst": "09:40"
+  },
+  {
+    "Id": 78,
+    "Numer": 3,
+    "Poczatek": 31800,
+    "PoczatekTekst": "09:50",
+    "Koniec": 34500,
+    "KoniecTekst": "10:35"
+  },
+  {
+    "Id": 79,
+    "Numer": 4,
+    "Poczatek": 35100,
+    "PoczatekTekst": "10:45",
+    "Koniec": 37800,
+    "KoniecTekst": "11:30"
+  },
+  {
+    "Id": 80,
+    "Numer": 5,
+    "Poczatek": 38400,
+    "PoczatekTekst": "11:40",
+    "Koniec": 41100,
+    "KoniecTekst": "12:25"
+  },
+  {
+    "Id": 81,
+    "Numer": 6,
+    "Poczatek": 42300,
+    "PoczatekTekst": "12:45",
+    "Koniec": 45000,
+    "KoniecTekst": "13:30"
+  },
+  {
+    "Id": 82,
+    "Numer": 7,
+    "Poczatek": 45600,
+    "PoczatekTekst": "13:40",
+    "Koniec": 48300,
+    "KoniecTekst": "14:25"
+  },
+  {
+    "Id": 83,
+    "Numer": 8,
+    "Poczatek": 48600,
+    "PoczatekTekst": "14:30",
+    "Koniec": 51300,
+    "KoniecTekst": "15:15"
+  },
+  {
+    "Id": 84,
+    "Numer": 9,
+    "Poczatek": 51600,
+    "PoczatekTekst": "15:20",
+    "Koniec": 54300,
+    "KoniecTekst": "16:05"
+  },
+  {
+    "Id": 85,
+    "Numer": 10,
+    "Poczatek": 54600,
+    "PoczatekTekst": "16:10",
+    "Koniec": 57300,
+    "KoniecTekst": "16:55"
+  },
+  {
+    "Id": 86,
+    "Numer": 11,
+    "Poczatek": 57600,
+    "PoczatekTekst": "17:00",
+    "Koniec": 60300,
+    "KoniecTekst": "17:45"
+  },
+  {
+    "Id": 87,
+    "Numer": 12,
+    "Poczatek": 60600,
+    "PoczatekTekst": "17:50",
+    "Koniec": 63300,
+    "KoniecTekst": "18:35"
+  }
+]

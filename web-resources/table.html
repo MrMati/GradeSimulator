@@ -1,0 +1,87 @@
+﻿<!DOCTYPE HTML> 
+<html>
+   <head>
+      <title>Grade Simulator</title>
+      <meta charset="utf-8">
+      <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+      <script src="script.js"></script>
+	  <link rel="stylesheet" type="text/css" href="style.css"> 
+      
+   </head>
+   <body style = "text-align:left;">
+      <div class="row">
+         <div class="column left">
+            <div class="code" contenteditable >
+               <pre class="pre" id="json2table">
+[
+    {
+        "Nazwa": "trójkąty",
+        "Ocena": "2", 
+        "Waga": "1"
+    },
+    {
+        "Nazwa": "list",
+        "Ocena": "4",
+        "Waga": "3"
+    },
+    {
+        "Nazwa": "wf",
+        "Ocena": "5",
+        "Waga": "2"
+    },
+    {
+        "Nazwa": "obrazy",
+        "Ocena": "4",
+        "Waga": "3"
+    }
+    
+]
+</pre>
+            </div>
+         </div>
+         <div class="column middle">
+            <input id="selectallbut" type="button" onclick="SelectAll();" value="Select all" checked="false"/>
+            <form>
+               <input type="checkbox" id="math" name="math" value="matematyka">
+               <label for="math"> Matematyka</label><br>
+               <input type="checkbox" id="inf" name="inf" value="informatyka">
+               <label for="inf"> Informatyka</label><br>
+               <input type="checkbox" id="ang" name="ang" value="język angielski">
+               <label for="ang"> Język angielski</label><br>
+               <input type="checkbox" id="niem" name="niem" value="język niemiecki">
+               <label for="niem"> Język niemiecki</label><br>
+               <input type="checkbox" id="fiz" name="fiz" value="fizyka">
+               <label for="fiz"> Fizyka</label><br>
+               <input type="checkbox" id="chem" name="chem" value="chemia">
+               <label for="chem"> Chemia</label><br>
+               <input type="checkbox" id="biol" name="biol" value="biologia">
+               <label for="biol"> Biologia</label><br>
+               <input type="checkbox" id="geo" name="geo" value="geografia">
+               <label for="geo"> Geografia</label><br>
+               <input type="checkbox" id="hist" name="hist" value="historia">
+               <label for="hist"> Historia</label><br>
+               <input type="checkbox" id="wos" name="wos" value="wiedza o społeczeństwie">
+               <label for="wos"> Wiedza o społeczeństwie</label><br>
+               <input type="checkbox" id="edb" name="edb" value="edukacja dla bezpieczeństwa">
+               <label for="edb"> Edukacja dla bezpieczeństwa</label><br>
+               <input type="checkbox" id="plst" name="plst" value="plastyka">
+               <label for="plst"> Plastyka</label><br>
+               <input type="checkbox" id="rel" name="rel" value="religia">
+               <label for="rel"> Religia</label><br>
+               <input type="checkbox" id="wf" name="wf" value="wychowanie fizyczne">
+               <label for="wf"> Wychowanie fizyczne</label><br>
+               <input type="checkbox" id="pl" name="pl" value="język polski">
+               <label for="pl"> Język Polski</label><br>
+            </form>
+            <input type="button" onclick="LoadJSON();" value="Load data" />
+         </div>
+         <div class="column right">
+            <div style="clear:both;overflow:hidden;">
+               <div id="showData"></div>
+               <input type="button" id="addGradeButton" onclick="AddGrade();" value="Add grade" style="visibility: hidden;"/>
+               <p id="test" style="text-align:center;font-size:22px"></p>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

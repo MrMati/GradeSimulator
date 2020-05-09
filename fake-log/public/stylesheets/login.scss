@@ -1,0 +1,84 @@
+$primary: #d32f2f;
+
+#MainDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  form {
+    background: #ddd;
+    padding: 10px 40px 40px;
+    width: 600px;
+    margin: 0 auto;
+
+    h1 {
+      margin: 15px 0;
+      color: $primary;
+      font-weight: lighter;
+      font-size: 3rem;
+      text-align: center;
+    }
+
+    h2 {
+      font-weight: normal;
+      font-size: 1.3rem;
+      text-align: center;
+    }
+
+    label {
+      font-size: 1.3rem;
+    }
+
+    input:not([type="submit"]) {
+      display: block;
+      width: 100%;
+      border: 0;
+      padding: 3px;
+      margin: 3px 0 20px;
+    }
+
+    input[type="submit"] {
+      display: block;
+      margin: 20px auto 0;
+      background: $primary;
+      font-size: 2.4rem;
+      color: white;
+      cursor: pointer;
+      border: 0;
+      padding: 10px 20px;
+    }
+
+    #UnlockRequestSection {
+      text-align: center;
+    }
+
+    .Account {
+      &:after {
+        content: "|";
+        margin: 0 5px;
+        display: inline-block;
+      }
+
+      &:last-of-type:after {
+        display: none;
+      }
+    }
+
+    .ErrorMessage {
+      font-size: 1.3rem;
+      margin: 20px 0 0;
+      text-align: center;
+      color: red;
+    }
+  }
+  .LogOnBoard {
+    h1 {
+      margin: 15px 0;
+      color: $primary;
+      font-weight: lighter;
+      font-size: 3rem;
+      text-align: center;
+    }
+  }
+}

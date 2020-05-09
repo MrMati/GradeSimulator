@@ -1,0 +1,25 @@
+extends layout
+
+append extraHeader
+  style
+    |  #MainPage_ErrorDiv div {
+    |     position:relative;
+    |     margin: 120px auto 0 auto;
+    |     width: 600px;
+    |     height: 130px;
+    |     padding-left: 20px;
+    |     padding-top: 22px;
+    |     line-height: 22px;
+    |  }
+    | #MainPage_ErrorDiv h2 {
+    |     color: red;
+    | }
+
+block content
+  #MainPage_ErrorDiv
+    div
+      h2 Informacja
+      | #{message}
+      br
+      br
+      p © #{(new Date()).getFullYear()} Wulkanowy FakeUONET+

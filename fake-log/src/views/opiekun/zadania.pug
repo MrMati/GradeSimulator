@@ -1,0 +1,34 @@
+extends layout
+
+append content
+  main.mainContainer
+    h1 Zadania domowe
+
+    fieldset.pseudoForm
+      legend.floatLeft Tryb widoku:
+      div.floatLeft
+        input#radioWidokTygodnia(type="radio" value="1" name="wyborWidokuZadan")
+        label(for="radioWidokTygodnia") widok tygodnia
+      div.floatLeft
+        input#radioWidokDnia(type="radio" value="1" name="wyborWidokuZadan" checked="checked")
+        label(for="radioWidokDnia") widok dnia
+
+    if (!homework.length)
+      h2 Brak zadań domowych
+    else
+      h2 #{homework[0].dayName}, #{homework[0].date}
+      each item in homework
+        article
+          div.daneWiersz
+            div.tytul Przedmiot:
+            div.wartosc= item.subject
+          div.daneWiersz
+            div.tytul Opis:
+            div.wartosc= item.content
+          div.daneWiersz
+            div.tytul Nauczyciel i data wpisu:
+            div.wartosc #{item.teacher} [#{item.teacherSymbol}], #{item.entryDate}
+
+    .navigation
+      a.button-prev(href="/powiatwulkanowy/123456/ZadaniaDomowe.mvc?rodzajWidoku=Dzien&data=" + tics.prev) Poprzedni dzień
+      a.button-next(href="/powiatwulkanowy/123456/ZadaniaDomowe.mvc?rodzajWidoku=Dzien&data=" + tics.next) Następny dzień

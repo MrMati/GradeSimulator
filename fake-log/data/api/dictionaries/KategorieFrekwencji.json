@@ -1,0 +1,90 @@
+[
+  {
+    "Id": 1,
+    "Nazwa": "obecność",
+    "Pozycja": 1000,
+    "Obecnosc": true,
+    "Nieobecnosc": false,
+    "Zwolnienie": false,
+    "Spoznienie": false,
+    "Usprawiedliwione": false,
+    "Usuniete": false
+  },
+  {
+    "Id": 2,
+    "Nazwa": "nieobecność nieusprawiedliwiona",
+    "Pozycja": 1000,
+    "Obecnosc": false,
+    "Nieobecnosc": true,
+    "Zwolnienie": false,
+    "Spoznienie": false,
+    "Usprawiedliwione": false,
+    "Usuniete": false
+  },
+  {
+    "Id": 3,
+    "Nazwa": "nieobecność usprawiedliwiona",
+    "Pozycja": 1000,
+    "Obecnosc": false,
+    "Nieobecnosc": true,
+    "Zwolnienie": false,
+    "Spoznienie": false,
+    "Usprawiedliwione": true,
+    "Usuniete": false
+  },
+  {
+    "Id": 4,
+    "Nazwa": "spóźnienie nieusprawiedliwione",
+    "Pozycja": 1000,
+    "Obecnosc": true,
+    "Nieobecnosc": false,
+    "Zwolnienie": false,
+    "Spoznienie": true,
+    "Usprawiedliwione": false,
+    "Usuniete": false
+  },
+  {
+    "Id": 5,
+    "Nazwa": "spóźnienie usprawiedliwione",
+    "Pozycja": 1000,
+    "Obecnosc": true,
+    "Nieobecnosc": false,
+    "Zwolnienie": false,
+    "Spoznienie": true,
+    "Usprawiedliwione": true,
+    "Usuniete": false
+  },
+  {
+    "Id": 6,
+    "Nazwa": "nieobecny z przyczyn szkolnych",
+    "Pozycja": 1000,
+    "Obecnosc": true,
+    "Nieobecnosc": false,
+    "Zwolnienie": false,
+    "Spoznienie": false,
+    "Usprawiedliwione": false,
+    "Usuniete": false
+  },
+  {
+    "Id": 7,
+    "Nazwa": "zwolniony",
+    "Pozycja": 1000,
+    "Obecnosc": false,
+    "Nieobecnosc": false,
+    "Zwolnienie": true,
+    "Spoznienie": false,
+    "Usprawiedliwione": false,
+    "Usuniete": false
+  },
+  {
+    "Id": 8,
+    "Nazwa": "usunięty wpis",
+    "Pozycja": 1000,
+    "Obecnosc": false,
+    "Nieobecnosc": false,
+    "Zwolnienie": false,
+    "Spoznienie": false,
+    "Usprawiedliwione": false,
+    "Usuniete": true
+  }
+]

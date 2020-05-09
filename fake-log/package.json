@@ -1,0 +1,32 @@
+{
+  "name": "fake-log",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "watch": "nodemon ./bin/www",
+    "test": "jshint src/ app.js --verbose"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.6",
+    "body-parser": "~1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "csrf": "^3.1.0",
+    "date-fns": "^2.12.0",
+    "debug": "^4.1.1",
+    "express": "~4.17.1",
+    "express-subdomain": "^1.0.5",
+    "lodash": "latest",
+    "md5": "^2.2.1",
+    "morgan": "~1.10.0",
+    "node-sass-middleware": "github:sass/node-sass-middleware#v0.11.1",
+    "pug": "^2.0.4",
+    "serve-favicon": "~2.5.0",
+    "uuidv4": "^6.0.7"
+  },
+  "devDependencies": {
+    "jshint": "^2.11.0",
+    "nodemon": "^2.0.3"
+  }
+}

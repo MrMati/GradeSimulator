@@ -1,0 +1,61 @@
+.x-obecnosc:before {
+  content: 'obecność';
+  background: green;
+}
+
+.x-nieobecnosc-nieuspr:before {
+  content: 'nieobecność nieusprawiedliwiona';
+  background: red;
+}
+
+.x-nieobecnosc-uspr:before {
+  content: 'nieobecność usprawiedliwiona';
+  background: orange;
+}
+
+.x-nieobecnosc-przycz-szkol:before {
+  content: 'nieobecność z przyczyn szkolnych';
+  background: lightblue;
+}
+
+.x-sp-nieusprawiedliwione:before {
+  content: 'spóźnienie nieusprawiedliwione';
+  background: yellow;
+}
+
+.x-sp-spr:before {
+  content: 'spóźnienie usprawiedliwione';
+  background: black;
+  color: white;
+}
+
+.x-sp-zwolnienie:before {
+  content: 'zwolnienie';
+  background: purple;
+}
+
+.x-sp-nieobecny-w-oddziale:before {
+  content: 'nieobecny w oddziale';
+  background: grey;
+}
+
+.x-obecnosc:before {
+  content: 'obecność';
+  background: green;
+}
+
+[class^="x"]:before {
+  color: #fff;
+  padding: 2px;
+  font-size: small;
+}
+
+//.presentData td:not(.padding-zero):not(.x-sp-nieobecny-w-oddziale):not(:first-child):before {
+//  display: block;
+//  content: 'pusta';
+//  background: grey;
+//}
+.presentData img {
+  margin: 0 auto;
+  display: block;
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "Id": 1,
+    "Imie": "Karolina",
+    "Nazwisko": "Kowalska",
+    "Kod": "AN",
+    "Aktywny": true,
+    "Nauczyciel": true,
+    "LoginId": 100
+  },
+  {
+    "Id": 2,
+    "Imie": "Zofia",
+    "Nazwisko": "Czerwińska",
+    "Kod": "NA",
+    "Aktywny": true,
+    "Nauczyciel": true,
+    "LoginId": 101
+  },
+  {
+    "Id": 3,
+    "Imie": "Aleksandra",
+    "Nazwisko": "Krajewska",
+    "Kod": "AK",
+    "Aktywny": true,
+    "Nauczyciel": true,
+    "LoginId": 102
+  },
+  {
+    "Id": 4,
+    "Imie": "Stanisław",
+    "Nazwisko": "Krupa",
+    "Kod": "BS",
+    "Aktywny": true,
+    "Nauczyciel": true,
+    "LoginId": 103
+  },
+  {
+    "Id": 5,
+    "Imie": "Aleksandra",
+    "Nazwisko": "Wójtowicz",
+    "Kod": "AW",
+    "Aktywny": true,
+    "Nauczyciel": true,
+    "LoginId": 104
+  },
+  {
+    "Id": 6,
+    "Imie": "Sara",
+    "Nazwisko": "Wierzbicka",
+    "Kod": "KB",
+    "Aktywny": true,
+    "Nauczyciel": true,
+    "LoginId": 105
+  },
+  {
+    "Id": 7,
+    "Imie": "Mateusz",
+    "Nazwisko": "Kowal",
+    "Kod": "MK",
+    "Aktywny": true,
+    "Nauczyciel": true,
+    "LoginId": 106
+  },
+  {
+    "Id": 8,
+    "Imie": "Amelia",
+    "Nazwisko": "Mazur",
+    "Kod": "AM",
+    "Aktywny": true,
+    "Nauczyciel": true,
+    "LoginId": 107
+  },
+  {
+    "Id": 9,
+    "Imie": "Barbara",
+    "Nazwisko": "Markowska",
+    "Kod": "BM",
+    "Aktywny": true,
+    "Nauczyciel": true,
+    "LoginId": 108
+  },
+  {
+    "Id": 10,
+    "Imie": "Michał",
+    "Nazwisko": "Mazur",
+    "Kod": "MM",
+    "Aktywny": true,
+    "Nauczyciel": true,
+    "LoginId": 109
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "WiadomoscId": 27214,
+    "Nadawca": "Nazwisko Imię",
+    "NadawcaId": 3617,
+    "Adresaci": null,
+    "Tytul": "Temat wiadomości",
+    "Tresc": "Tak wygląda zawartość wiadomości.\nZazwyczaj ma wiele linijek.\n\nZ poważaniem,\nNazwisko Imię",
+    "DataWyslania": "01.03.2018",
+    "DataWyslaniaUnixEpoch": 1519911076,
+    "GodzinaWyslania": "14:31",
+    "DataPrzeczytania": null,
+    "DataPrzeczytaniaUnixEpoch": null,
+    "GodzinaPrzeczytania": "15:30",
+    "StatusWiadomosci": "Widoczna",
+    "FolderWiadomosci": "Odebrane",
+    "Nieprzeczytane": null,
+    "Przeczytane": null
+  },
+  {
+    "WiadomoscId": 28973,
+    "Nadawca": "Kowalski Jan",
+    "NadawcaId": 2137,
+    "Adresaci": null,
+    "Tytul": "Tytuł",
+    "Tresc": "Dużo różnych treści.\nBardzo dużo,\nbardzo długie to potrafi być",
+    "DataWyslania": "05.04.2018",
+    "DataWyslaniaUnixEpoch": 1522921875,
+    "GodzinaWyslania": "11:51",
+    "DataPrzeczytania": null,
+    "DataPrzeczytaniaUnixEpoch": null,
+    "GodzinaPrzeczytania": null,
+    "StatusWiadomosci": "Widoczna",
+    "FolderWiadomosci": "Odebrane",
+    "Nieprzeczytane": null,
+    "Przeczytane": null
+  }
+]
