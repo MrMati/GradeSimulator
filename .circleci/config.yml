@@ -18,6 +18,10 @@ jobs: # a collection of steps
           name: Npm install
           command: npm --prefix ./fake-log install ./fake-log
 
+      -   run:
+              name: Add fake-log to /etc/hosts
+              command: echo "127.0.0.55 api.fakelog.cf" | sudo tee -a /etc/hosts
+
       - run:
           name: Enable execution for gradlew
           command: chmod +x gradlew
@@ -53,44 +57,36 @@ jobs: # a collection of steps
             name: Downloading Dependencies
             command: ./gradlew --max-workers 2 downloadDependencies
 
-      - save_cache:
-            paths:
-                - ~/.gradle/wrapper/
-            key: gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
-
-      - save_cache:
-            paths:
-                - ~/.gradle/caches/
-            key: gradle-cache-{{ checksum "build.gradle" }}
-
-        # build everything needed for publication
-      - run:
-            name: Building Project
-            command: ./gradlew --max-workers 2 --continue build
-
-        # cache gradle build caches
-      - run:
-            name: Collecting Gradle Build Caches
-            command: |
-                mkdir -p ~/gradle-build-caches
-                [ -d ~/.gradle/caches ] &&
-                  [ -n "$(ls -Ad ~/.gradle/caches/build-cache-* 2>/dev/null)" ] &&
-                  mv ~/.gradle/caches/build-cache-* ~/gradle-build-caches || true
-            when: always
-
-      - save_cache:
-            paths:
-                - ~/gradle-build-caches
-            key: gradle-build-caches-{{ .Revision }}
-            when: always
-
-      - run:
-          name: Add fake-log to /etc/hosts
-          command: echo "127.0.0.55 api.fakelog.cf" | sudo tee -a /etc/hosts
 
       - run:
           name: Run Gradle test
           command: ./gradlew test
+
+
+      -   save_cache:
+              paths:
+                  - ~/.gradle/wrapper/
+              key: gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+
+      -   save_cache:
+              paths:
+                  - ~/.gradle/caches/
+              key: gradle-cache-{{ checksum "build.gradle" }}
+
+      -   run:
+              name: Collecting Gradle Build Caches
+              command: |
+                  mkdir -p ~/gradle-build-caches
+                  [ -d ~/.gradle/caches ] &&
+                    [ -n "$(ls -Ad ~/.gradle/caches/build-cache-* 2>/dev/null)" ] &&
+                    mv ~/.gradle/caches/build-cache-* ~/gradle-build-caches || true
+              when: always
+
+      -   save_cache:
+              paths:
+                  - ~/gradle-build-caches
+              key: gradle-build-caches-{{ .Revision }}
+              when: always
 
       - store_test_results:
           path: build/test-results/test/

@@ -49,4 +49,3 @@ fun getSdkObject(devMode: Boolean): Sdk {
         }
     }
 }
-
