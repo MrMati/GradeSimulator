@@ -15,6 +15,10 @@ jobs: # a collection of steps
       - checkout # check out source code to working directory
 
       - run:
+          name: Npm install
+          command: npm --prefix ./fake-log install ./fake-log
+
+      - run:
           name: Enable execution for gradlew
           command: chmod +x gradlew
 
@@ -79,10 +83,6 @@ jobs: # a collection of steps
                 - ~/gradle-build-caches
             key: gradle-build-caches-{{ .Revision }}
             when: always
-
-      - run:
-          name: Npm install
-          command: npm --prefix ./fake-log install ./fake-log
 
       - run:
           name: Add fake-log to /etc/hosts
