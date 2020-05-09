@@ -45,6 +45,10 @@ jobs: # a collection of steps
           key: v1-gradle-cache-{{ checksum "build.gradle" }}
 
       - run:
+          name: Npm install
+          command: npm --prefix ./fake-log install ./fake-log
+
+      - run:
           name: Run Gradle test
           command: ./gradlew test
 
