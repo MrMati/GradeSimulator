@@ -8,7 +8,7 @@ jobs: # a collection of steps
     working_directory: ~/circleci-demo # directory where steps will run
 
     docker: # run the steps with Docker
-      - image: circleci/openjdk:8-jdk-stretch
+      - image: circleci/openjdk:11-jdk-stretch
 
     steps: # a collection of executable commands
 
@@ -47,6 +47,10 @@ jobs: # a collection of steps
       - run:
           name: Npm install
           command: npm --prefix ./fake-log install ./fake-log
+
+      - run:
+          name: Add fake-log to /etc/hosts
+          command: sudo echo "127.0.0.55 api.fakelog.cf" >> /etc/hosts
 
       - run:
           name: Run Gradle test
