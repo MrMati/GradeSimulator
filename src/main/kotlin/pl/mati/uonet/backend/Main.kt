@@ -30,7 +30,7 @@ class GradeSimulatorApp(val devMode: Boolean) {
                 }
             }
         }.apply {
-            exception(Exception::class.java) { e, ctx -> e.printStackTrace() }
+            exception(Exception::class.java) { e, _ -> e.printStackTrace() }
             error(404) { ctx -> ctx.html("not found") }
         }.start()
 

@@ -93,8 +93,15 @@ jobs: # a collection of steps
 
       - store_artifacts: # store the uberjar as an artifact
           path: build/libs/
+          
+orbs:
+  heroku: circleci/heroku@1.0.1
 workflows:
   version: 2.1
   workflow:
     jobs:
       - build
+  heroku_deploy:
+    jobs:
+      - heroku/deploy-via-git
+
