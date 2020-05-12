@@ -79,7 +79,17 @@ dependencies {
     testImplementation 'org.assertj:assertj-core:3.15.0'
 }
 
-task stage(dependsOn: ['assemble'])
+task copyWebFiles(type: Copy) {
+    from "$projectDir/web-resources"
+    into "$projectDir/build/libs/web-resources"
+
+}
+task copySecretFile(type: Copy) {
+    from "$projectDir/secrets.txt"
+    into "$projectDir/build/libs"
+}
+
+task stage(dependsOn: ['shadowJar', 'copyWebFiles', 'copySecretFile'])
 
 task downloadDependencies() {
     description 'Download all dependencies to the Gradle cache'
