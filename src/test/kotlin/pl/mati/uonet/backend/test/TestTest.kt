@@ -7,7 +7,7 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
 import pl.mati.uonet.backend.GradeSimulatorApp
-import pl.mati.uonet.backend.JSONGrade
+import pl.mati.uonet.backend.data.JSONGrade
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class TestTest {

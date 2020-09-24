@@ -1,6 +1,6 @@
 package pl.mati.uonet.backend.cache
 
-import pl.mati.uonet.backend.JSONGrade
+import pl.mati.uonet.backend.data.JSONGrade
 import java.lang.ref.SoftReference
 import java.util.Optional
 import java.util.concurrent.ConcurrentHashMap

@@ -28,8 +28,8 @@ fun getSdkObject(devMode: Boolean): Sdk {
         return Sdk().apply {
 
             File("secrets.txt").bufferedReader().use {
-                email = it.readLine()
-                password = it.readLine()
+                //email = it.readLine()
+                //password = it.readLine()
                 privateKey = it.readLine()
                 certKey = it.readLine()
             }

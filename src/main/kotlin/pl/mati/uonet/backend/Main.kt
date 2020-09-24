@@ -45,6 +45,7 @@ class GradeSimulatorApp(val devMode: Boolean) {
         val html = File("web-resources/table.html").readText()
         val css = File("web-resources/style.css").readText()
         val js = File("web-resources/script.js").readText()
+        val js2 = File("web-resources/script2.js").readText()
 
         app.routes {
 
@@ -60,12 +61,20 @@ class GradeSimulatorApp(val devMode: Boolean) {
                 ctx.result(js).contentType("application/javascript")
             }
 
+            get("/script2.js") { ctx ->
+                ctx.result(js2).contentType("application/javascript")
+            }
+
             get("/grades") { ctx ->
-                ctx.json(gradeDao.getAllGrades()!!) // .header("Server", "MojaMama")
+                ctx.json(gradeDao.getAllGrades()!!) // .header("Server", "")
             }
 
             get("/grades/subject/:subject-name") { ctx ->
                 ctx.json(gradeDao.getGradesBySubject(ctx.pathParam("subject-name"))!!)
+            }
+
+            get("/grades/final") { ctx ->
+                ctx.json(gradeDao.getAllAverages()!!)
             }
         }
 
