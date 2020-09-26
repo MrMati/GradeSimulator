@@ -10,7 +10,7 @@ import pl.mati.uonet.backend.GradeSimulatorApp
 import pl.mati.uonet.backend.data.JSONGrade
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-class TestTest {
+class FakeTest {
 
     companion object {
         private const val EXPECTED_ALL_GRADES =

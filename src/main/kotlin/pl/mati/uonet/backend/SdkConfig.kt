@@ -25,13 +25,18 @@ fun getSdkObject(devMode: Boolean): Sdk {
             classId = 14
         }
     } else {
+        val secrets = File("secrets.txt");
         return Sdk().apply {
-
-            File("secrets.txt").bufferedReader().use {
-                //email = it.readLine()
-                //password = it.readLine()
-                privateKey = it.readLine()
-                certKey = it.readLine()
+            if (secrets.exists()) {
+                secrets.bufferedReader().use {
+                    //email = it.readLine()
+                    //password = it.readLine()
+                    privateKey = it.readLine()
+                    certKey = it.readLine()
+                }
+            } else {
+                privateKey = System.getenv("PRIV_KEY")
+                certKey = System.getenv("CERT")
             }
 
             mobileBaseUrl = "https://uonetplus-komunikacja.edu.lublin.eu/lublin"

@@ -60,7 +60,7 @@ jobs: # a collection of steps
 
       - run:
           name: Run Gradle test
-          command: ./gradlew test
+          command: ./gradlew test --tests *FakeTest
 
 
       -   save_cache:
