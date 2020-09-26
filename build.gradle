@@ -84,6 +84,8 @@ dependencies {
     testImplementation 'org.assertj:assertj-core:3.15.0'
 }
 
+
+
 task copyWebFiles(type: Copy) {
     from "$projectDir/web-resources"
     into "$projectDir/build/libs/web-resources"
@@ -94,7 +96,13 @@ task copySecretFile(type: Copy) {
     into "$projectDir/build/libs"
 }
 
-task stage(dependsOn: ['shadowJar', 'copyWebFiles', 'copySecretFile'])
+task copyDockerFiles(type: Copy) {
+    from "$projectDir/build/libs/gradesim.jar"
+    into "$projectDir/docker/"
+}
+
+task stage(dependsOn: ['shadowJar', 'copyWebFiles']) //, 'copySecretFile'
+stage.finalizedBy(copyDockerFiles)
 
 task downloadDependencies() {
     description 'Download all dependencies to the Gradle cache'
