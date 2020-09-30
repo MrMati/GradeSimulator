@@ -86,7 +86,6 @@ dependencies {
 }
 
 
-
 task copyWebFiles(type: Copy) {
     from "$projectDir/web-resources"
     into "$projectDir/build/libs/web-resources"
