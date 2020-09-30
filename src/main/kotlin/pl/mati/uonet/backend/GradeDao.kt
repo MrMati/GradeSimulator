@@ -5,38 +5,45 @@ import pl.mati.uonet.backend.data.JSONFinalAverage
 import pl.mati.uonet.backend.data.JSONGrade
 import java.util.function.Consumer
 
-class GradeDao(val devMode: Boolean) {
+class GradeDao(devMode: Boolean) {
     private val sdk = getSdkObject(devMode)
 
-    private val JSONcache = InMemoryCache()
+    private val gradeCache = InMemoryCache<JSONGrade>()
+    private val avgCache = InMemoryCache<JSONFinalAverage>()
 
     companion object {
-        const val EXPIRATION_PERIOD: Long = 15000
+        const val EXPIRATION_PERIOD: Long = 60 //seconds
     }
 
-    fun getAllAverages(): MutableList<JSONFinalAverage>? {
 
-        val avgs = sdk.getGradesSummary(57751).blockingGet()
+fun getAllAverages(): MutableList<JSONFinalAverage>? {
 
-        val JSONavgs = mutableListOf<JSONFinalAverage>()
-        avgs.forEach(Consumer { t ->
-            val javg = JSONFinalAverage(t.name, t.average.toString())
-            JSONavgs.add(javg)
-        })
-        return JSONavgs
+    if (avgCache.exists("avg")) {
+        return avgCache["avg"]
     }
 
-    fun getAllGrades(): MutableList<JSONGrade>? {
+    val avgs = sdk.getGradesSummary(57751).blockingGet()
 
-        if (JSONcache.exists("all")) {
-            return JSONcache.get("all")
-        }
+    val JSONavgs = mutableListOf<JSONFinalAverage>()
+    avgs.forEach(Consumer { t ->
+        val javg = JSONFinalAverage(t.name, t.average.toString())
+        JSONavgs.add(javg)
+    })
+    avgCache.add("avg", JSONavgs, EXPIRATION_PERIOD)
+    return JSONavgs
+}
 
+fun getAllGrades(query: String?): List<JSONGrade> {
+
+    var JSONgrades = mutableListOf<JSONGrade>()
+
+    if (gradeCache.exists("all")) {
+        JSONgrades = gradeCache["all"]!!
+    } else {
         val grades1 = sdk.getGrades(57751).blockingGet()
         val grades2 = sdk.getGrades(57752).blockingGet()
-        val grades = grades1 + grades2
+        val grades = (grades1 + grades2).toMutableList()
 
-        val JSONgrades = mutableListOf<JSONGrade>()
         grades.forEach(Consumer { t ->
             if (t.value + t.modifier == 0.0) {
                 return@Consumer
@@ -44,30 +51,17 @@ class GradeDao(val devMode: Boolean) {
             val jgrade = JSONGrade(t.description, t.subject, (t.value + t.modifier).toString(), t.weight.dropLast(3))
             JSONgrades.add(jgrade)
         })
-        JSONcache.add("all", JSONgrades, EXPIRATION_PERIOD)
-        return JSONgrades
+        gradeCache.add("all", JSONgrades, EXPIRATION_PERIOD)
     }
 
-    fun getGradesBySubject(subject: String): MutableList<JSONGrade>? {
-
-        if (JSONcache.exists(subject)) {
-            return JSONcache.get(subject)
-        }
-
-        val grades1 = sdk.getGrades(57751).blockingGet()
-        val grades2 = sdk.getGrades(57752).blockingGet()
-        var grades = grades1 + grades2
-        grades = grades.filter { it.subject.toLowerCase().matches(Regex(subject.replace(",", "||"))) }
-
-        val JSONgrades = mutableListOf<JSONGrade>()
-        grades.forEach(Consumer { t ->
-            if (t.value + t.modifier == 0.0) {
-                return@Consumer
-            }
-            val jgrade = JSONGrade(t.description, t.subject, (t.value + t.modifier).toString(), t.weight.dropLast(3))
-            JSONgrades.add(jgrade)
-        })
-        JSONcache.add(subject, JSONgrades, EXPIRATION_PERIOD)
-        return JSONgrades
+    return if (query.isNullOrEmpty()) {
+        JSONgrades
+    } else {
+        JSONgrades.filter { it.Przedmiot.toLowerCase().matches(Regex(query.replace(",", "||"))) }
     }
+}
+
+fun clearCache() {
+    gradeCache.clear()
+}
 }

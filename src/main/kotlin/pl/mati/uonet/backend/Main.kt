@@ -66,15 +66,15 @@ class GradeSimulatorApp(val devMode: Boolean) {
             }
 
             get("/grades") { ctx ->
-                ctx.json(gradeDao.getAllGrades()!!) // .header("Server", "")
-            }
-
-            get("/grades/subject/:subject-name") { ctx ->
-                ctx.json(gradeDao.getGradesBySubject(ctx.pathParam("subject-name"))!!)
+                ctx.json(gradeDao.getAllGrades(ctx.queryParam("filter"))) // .header("Server", "")
             }
 
             get("/grades/final") { ctx ->
                 ctx.json(gradeDao.getAllAverages()!!)
+            }
+
+            get("/grades/reload") { ctx ->
+                gradeDao.clearCache()
             }
         }
 

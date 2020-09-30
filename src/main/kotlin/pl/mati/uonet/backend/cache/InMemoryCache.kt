@@ -1,6 +1,5 @@
 package pl.mati.uonet.backend.cache
 
-import pl.mati.uonet.backend.data.JSONGrade
 import java.lang.ref.SoftReference
 import java.util.Optional
 import java.util.concurrent.ConcurrentHashMap
@@ -8,10 +7,10 @@ import java.util.concurrent.DelayQueue
 import java.util.concurrent.Delayed
 import java.util.concurrent.TimeUnit
 
-class InMemoryCache : Cache {
+class InMemoryCache<T> : Cache<T> {
 
-    private val cache = ConcurrentHashMap<String, SoftReference<MutableList<JSONGrade>?>>()
-    private val cleaningUpQueue = DelayQueue<DelayedCacheObject>()
+    private val cache = ConcurrentHashMap<String, SoftReference<MutableList<T>?>>()
+    private val cleaningUpQueue = DelayQueue<DelayedCacheObject<T>>()
 
     init {
         val cleanerThread = Thread {
@@ -33,8 +32,8 @@ class InMemoryCache : Cache {
         return cache.containsKey(key)
     }
 
-    override fun add(key: String, value: MutableList<JSONGrade>?, periodInMillis: Long) {
-        val expiryTime = System.currentTimeMillis() + periodInMillis
+    override fun add(key: String, value: MutableList<T>?, periodInSeconds: Long) {
+        val expiryTime = System.currentTimeMillis() + periodInSeconds * 1000
         val reference = SoftReference(value)
         cache[key] = reference
         cleaningUpQueue.put(DelayedCacheObject(key, reference, expiryTime))
@@ -44,7 +43,7 @@ class InMemoryCache : Cache {
         cache.remove(key)
     }
 
-    override fun get(key: String): MutableList<JSONGrade>? {
+    override fun get(key: String): MutableList<T>? {
         return Optional.ofNullable(cache[key]).map { sRef -> sRef.get() }.orElse(null)
     }
 
@@ -56,7 +55,7 @@ class InMemoryCache : Cache {
         return cache.size.toLong()
     }
 
-    private class DelayedCacheObject internal constructor(internal val key: String, val reference: SoftReference<MutableList<JSONGrade>?>, private val expiryTime: Long) :
+    private class DelayedCacheObject<T> internal constructor(internal val key: String, val reference: SoftReference<MutableList<T>?>, private val expiryTime: Long) :
         Delayed {
 
         override fun getDelay(unit: TimeUnit): Long {
@@ -64,7 +63,7 @@ class InMemoryCache : Cache {
         }
 
         override fun compareTo(other: Delayed): Int {
-            return if (expiryTime < (other as DelayedCacheObject).expiryTime) -1 else if (expiryTime > other.expiryTime) 1 else 0
+            return if (expiryTime < (other as DelayedCacheObject<*>).expiryTime) -1 else if (expiryTime > other.expiryTime) 1 else 0
         }
     }
 }

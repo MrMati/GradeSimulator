@@ -1,6 +1,6 @@
 package pl.mati.uonet.backend.data
 
-data class JSONGrade(
+data class JSONGrade (
     val Nazwa: String,
     val Przedmiot: String,
     val Ocena: String,
