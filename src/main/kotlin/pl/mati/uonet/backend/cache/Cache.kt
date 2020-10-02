@@ -4,7 +4,7 @@ interface Cache<T> {
 
     fun exists(key: String): Boolean
 
-    fun add(key: String, value: MutableList<T>?, periodInMillis: Long)
+    fun add(key: String, value: MutableList<T>?, periodInSeconds: Long)
 
     fun remove(key: String)
 

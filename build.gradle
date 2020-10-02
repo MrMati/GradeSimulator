@@ -68,21 +68,22 @@ dependencies {
     implementation "io.github.wulkanowy:sdk:0.17.4"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 
-    implementation "io.reactivex.rxjava2:rxjava:2.2.19"
+    implementation "io.reactivex.rxjava2:rxjava:2.2.2"
     implementation "io.reactivex.rxjava3:rxjava:3.0.6"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp3"
     implementation "com.squareup.okhttp3:okhttp:$okhttp3"
-
     implementation "org.threeten:threetenbp:$threetenbp"
 
-    implementation "org.slf4j:slf4j-simple:1.7.28"
-    implementation 'com.google.code.gson:gson:2.8.5'
-    implementation "io.javalin:javalin:3.8.0"
+    implementation "org.slf4j:slf4j-simple:1.7.30"
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation "io.javalin:javalin:3.10.1"
 
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
-    testImplementation 'com.konghq:unirest-java:3.7.02'
-    testImplementation 'org.assertj:assertj-core:3.15.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testImplementation 'com.konghq:unirest-java:3.11.00'
+    testImplementation 'org.assertj:assertj-core:3.17.2'
+    implementation("io.micrometer:micrometer-core:1.5.5")
+    implementation("io.micrometer:micrometer-registry-prometheus:1.5.5")
 }
 
 
