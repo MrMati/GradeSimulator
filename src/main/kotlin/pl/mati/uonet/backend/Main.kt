@@ -20,7 +20,10 @@ class GradeSimulatorApp(val devMode: Boolean) {
     }
 
     fun start(args: Array<String>): Javalin? {
+        //val meterRegistry = PrometheusMeterRegistry(PrometheusConfig.DEFAULT)
+
         app = Javalin.create { config ->
+            //config.registerPlugin(MicrometerPlugin(meterRegistry))
             config.server {
                 Server().apply {
                     connectors = arrayOf(ServerConnector(this).apply {
@@ -33,6 +36,11 @@ class GradeSimulatorApp(val devMode: Boolean) {
             exception(Exception::class.java) { e, _ -> e.printStackTrace() }
             error(404) { ctx -> ctx.html("not found") }
         }.start()
+
+        /*app.exception(IllegalArgumentException::class.java) { e: IllegalArgumentException, ctx: Context? ->
+            MicrometerPlugin.EXCEPTION_HANDLER.handle(e, ctx!!)
+            e.printStackTrace()
+        }*/
 
         val gson = GsonBuilder().create()
         JavalinJson.fromJsonMapper = object : FromJsonMapper {
@@ -76,6 +84,10 @@ class GradeSimulatorApp(val devMode: Boolean) {
             get("/grades/reload") { ctx ->
                 gradeDao.clearCache()
             }
+
+            /*get("/prometheus") { ctx ->
+                ctx.contentType("text/plain").result(meterRegistry.scrape())
+            }*/
         }
 
         return app

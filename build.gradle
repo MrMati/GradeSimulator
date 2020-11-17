@@ -84,6 +84,8 @@ dependencies {
     testImplementation 'org.assertj:assertj-core:3.17.2'
     implementation("io.micrometer:micrometer-core:1.5.5")
     implementation("io.micrometer:micrometer-registry-prometheus:1.5.5")
+    implementation("org.apache.commons:commons-lang3:3.11")
+
 }
 
 
@@ -135,4 +137,5 @@ task startDaemon(type: com.github.psxpaul.task.ExecFork) {
 }
 
 test.dependsOn startDaemon
+
 
